@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .box {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            padding: 10px;
+            border: 1px solid red;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">1</div>
+    <script>
+        // 获取元素可视区 client系列  clientWidth 返回 padding值  ，不包含 边框 clientTop 包含边框
+        // client 返回就是 客户端。
+        var box = document.querySelector('.box');
+        box.addEventListener('click', function(e) {
+            console.log(box.clientWidth); // 不包含边框  返回padding值
+            console.log(box.clientTop); // 获取盒子 上边框
+        })
+    </script>
+</body>
+
+</html>

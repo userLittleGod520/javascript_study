@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // var number = 19;
+        // alert(typeof number);
+        // 数据类型(js的变量数据类型只有程序在运行中的值才能确定什么类型): 
+        // 检查数据类型 typeof操作符 typeof 变量 typeof (变量2) 一、简单数据类型 二、复杂
+        //1、string字符串('abc','李神')  2、number数字类型(12,12.2)   
+        // 3、boolean布尔型(false， true)  4、undefined  5、null
+
+
+        // 一、isNaN函数  判断是否是数值 数字return flase  非数值(return)true 把里面任何类型先转换数字型
+        // alert(isNaN(NaN))   //true   alert(isNaN("10")) // 返回false 
+
+        // 数值转换 Number(),parseInt(),parseFloat()
+        /* console.log(Number('12ad'));  //12
+         console.log(parseInt('12add')); //12 会解析里面的值是否有字母，从而停止解析。
+
+         指定基数用法 alert(parseInt('0xa',16));  后面的数字16代表是16进制。
+         console.log(parseFloat('12')); // 返回12  跟parseInt一样但支持解析第一个小数点
+             不支持基数方法  
+        alert(parseFloat(12.21)); //12.21
+          */
+
+
+        //  二、字符串型 string  转义符 \n 换行  \b退格  \r回车  \\斜杠
+        /*
+           alert('你好我是李神');  获取字符串长度 .length
+        var a = ('你好我是李神');
+        alert(a.length); // 获取长度为6
+
+          字符串的特点  一旦创建字符串，里面不销毁一样存在
+        var a = '李神';
+        a = a + '加油';
+        alert(a);  // return 李神加油 
+         
+        其他类型转换为字符串 toString(*进制)方法 null和undefined没有这个方法 -->>String()
+        var age = 19;
+        age2 = age.toString(); // 已经转换为字符串类型
+        toString(2)   -->
+        var age = 19;
+        age2 = age.toString(2);
+        alert(age2); // 二进制的10011  = 19
+
+         String(age)方法 string方法可以返回null和underfined值 tostring()方法不可以 
+        var age = undefined;
+        agestring = String(age);
+        alert(agestring);
+
+
+         三、object 对象类型： array数组
+        对象就是 一组数据和功能的集合  对象通过new操作符后跟创建对象类型的名称而创建  
+           创建的object类型的实例 为其添加方法和属性，创建自定义对象
+           var o = new object();
+          var o = new object(); // 如果不给构造函数转递参数，省略圆括号
+        var o = new object; // 可以但是不推荐
+        var a = Array(1, 2, 3);
+        alert(typeof a)
+            案例 一
+        var age = prompt('请输入你的年龄？');
+        console.log(typeof age);
+           案例二
+        var year = prompt('请输入你的出生年份');
+        var age = 2021 - year; // 年龄
+        alert('你今年已经' + age + '岁了')
+
+        // 案例四 加法及计算器
+        var num1 = prompt('请输入你的第一个数值');
+        var num2 = prompt('请输入你的第二个数值');
+        var sum = Number(num1) + Number(num2);
+        alert(sum);
+
+        // 四、Boolean类型  true 和 false
+        true代表着1 false 代表0  
+          其他类型转换为布尔值  Boolean('true');
+        */
+        var num1 = '';
+        var num2 = 0;
+        var num3 = NaN;
+        var num4 = null;
+        var num5 = undefined;
+        console.log(
+                Boolean(num1), Boolean(num2), Boolean(num3), Boolean(num4), Boolean(num5),
+            ) // 以上数据转换布尔值全为false
+    </script>
+</body>
+
+</html>

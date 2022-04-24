@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .div {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            font-size: 24px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div>文本</div>
+    <script>
+        // 1、使用element.style 获得样式  样式比较少 功能简单可以用
+        // 2、 className 会直接覆盖原来的名字 
+        // 3、如果想要保存原来的类名 把她原来的 加在一起
+
+        // 获取类名
+        var div = document.querySelector('div');
+        div.onclick = function() {
+            // this.style.backgroundColor = 'purple';
+            // this.style.width = '200px';
+            // this.style.height = '200px';
+            // this.style.backgroundColor = 'blue';
+            // this.style.color = 'white';
+            // this.style.fontSize = '25px';
+
+            // 直接加类名 那样式写到css里面 引用就行了
+            this.className = 'div';
+        }
+    </script>
+</body>
+
+</html>

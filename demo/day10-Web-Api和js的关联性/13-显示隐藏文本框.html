@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input {
+            color: gray;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="text" value="手机">
+    <script>
+        // 案例 表单文本框的显示和隐藏
+        // 表单需要2个新事件 获得焦点 onfocus 和 失去焦点onblur
+        // 获得焦点 判断表单里面的内容是否等于 默认文字 ，就清空表单内容
+        // 1、获取元素
+        var text = document.querySelector('input');
+        // 2、绑定事件 处理程序   获得焦点事件
+        text.onfocus = function() {
+                // console.log('得到焦点');
+                if (this.value === '手机') {
+                    this.value = ''; // 清空
+                }
+                // 获得焦点把 文字加深
+                this.style.color = 'black';
+            }
+            // 3、绑定事件 失去焦点事件 onblur
+        text.onblur = function() {
+            // console.log('失去了焦点！');
+            if (this.value === '') {
+                this.value = '手机';
+            }
+            // 失去焦点 颜色复原
+            this.style.color = 'gray';
+        }
+    </script>
+</body>
+
+</html>

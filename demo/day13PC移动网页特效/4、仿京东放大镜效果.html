@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var open = document.querySelector('.open');
+        var close = document.querySelector('.close-login');
+        var login = document.querySelector('.login');
+        var mask = document.querySelector('.login-bg');
+        var title = document.querySelector('.login-title');
+        open.addEventListener('click', function() {
+            login.style.display = 'block';
+            mask.style.display = 'block';
+        });
+        close.addEventListener('click', function() {
+            login.style.display = 'none';
+            mask.style.display = 'none';
+        });
+        title.addEventListener('mousedown', function(e) {
+            var x = e.pageX - login.offsetLeft;
+            var y = e.pageY - login.offsetTop;
+            // console.log(x);
+            document.addEventListener('mousemove', move);
+
+            function move(e) {
+                login.style.left = e.pageX - x - 400 + 'px';
+                login.style.top = e.pageY - y - 220 + 'px';
+            };
+            document.addEventListener('mouseup', function() {
+                document.removeEventListener('mousemove', move);
+            })
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .box {
+            width: 960px;
+            margin: 100px auto;
+        }
+        
+        input {
+            color: gray;
+        }
+        
+        .pink {
+            border: 1px solid pink;
+        }
+        
+        .black {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <input type="text" value="请输入用户名" class="user">
+        <input type="text" value="请输入密码" class="pwd">
+        <input type="button" value="登录">
+    </div>
+    <script>
+        // 案例
+        /*
+        //  1、用户鼠标移入 失去焦点 onblur 边框变色
+        */
+
+        // 获取页面元素
+        var int1 = document.querySelector('.user');
+        var int2 = document.querySelector('.pwd');
+        var num = 0;
+        int1.onblur = function() {
+            if (num == 0) {
+                this.value = '';
+                this.className = 'user pink';
+                num++;
+            } else {
+                this.value = '请输入用户名!';
+                this.className = 'user black';
+                num = 1;
+            }
+        }
+        int2.onblur = function() {
+            if (num == 0) {
+                this.value = '';
+                this.className = 'user pink';
+                num++;
+            } else {
+                this.value = '请输入用户名!';
+                this.className = 'user black';
+
+                num = 1;
+            }
+        }
+    </script>
+</body>
+
+</html>

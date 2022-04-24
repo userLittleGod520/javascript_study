@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .box {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="box"></div>
+    <script>
+        // 立即执行函数  (function(){ })()  不需要调用直接使用
+        // 最大的作用 是: 独立创建一个独立的作用域 避免命名冲突
+        function fn() {
+            console.log(1);
+        }
+
+        // 2、写法  第二个() 看成调用函数
+        //     (function() {})() // 或者  (function(){}());
+        (function(a) {
+            // console.log(123);
+            console.log(a);
+            var num = 10;
+        })(1);
+
+        // 第二种 写法
+        (function(a, b) {
+            console.log(a + b); // 7
+            var num = 10; // 变成局部变量
+        }(3, 4));
+        console.log(num);
+    </script>
+</body>
+
+</html>

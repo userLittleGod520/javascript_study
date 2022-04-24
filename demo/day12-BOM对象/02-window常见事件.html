@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: Red;
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        // window常见的事件
+        // 1、窗口加载事件 window.onload = function(){} 等页面资源加载完 才执行js 只能写一次 最后一次为准
+        // window.addEventListener('load',function(){ // 事件处理函数}) 没有限制 无限次使用
+        // document.addEventListener('DOMContentLoaded',function(){  }) 事件触发时，当DOM加载完毕，不包括图片，样式，flash
+        // 使用场景:ie9+ 页面图片特别多，用户访问onload触发需要长时间，交互效果不能实现，影响用户体验，用DOMContentLoaded更好
+
+
+        window.onload = function() {
+            var btn = document.querySelector('button');
+            btn.addEventListener('click', function() {
+                alert('点击我');
+            })
+        }
+        window.onload = function() {
+            // alert(22);
+        }
+        document.addEventListener('DOMContentLoaded', function() {
+                // alert(33);
+            })
+            // load事件等页面全部加载完毕，包含页面DOM元素 图片 flash css 等等
+            // DOMContentLoaded 等DOM加载完毕 不包含图片 flash css等执行 加载速度比load快
+
+
+
+        // 2、调整窗口大小 window.onresize = function(){} 触发就处理函数
+        // 窗口大小发生变化，就触发这个事件
+        // 使用场景 利用这个事件完成响应式布局。 window.innerWidth 当前屏幕的宽度
+        window.addEventListener('load', function() {
+            var div = document.querySelector('div');
+            window.addEventListener('resize', function() {
+                // console.log('变化了');
+                console.log(window.innerWidth);
+                if (window.innerWidth < 800) {
+                    div.style.backgroundColor = 'green';
+                }
+            })
+        })
+    </script>
+    <button>点击</button>
+    <div></div>
+</body>
+
+</html>

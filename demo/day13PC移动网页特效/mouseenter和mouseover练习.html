@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .father {
+            width: 400px;
+            height: 400px;
+            background-color: red;
+        }
+        
+        .son {
+            width: 200px;
+            height: 200px;
+            background-color: blue;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="father">
+        <div class="son"></div>
+    </div>
+    <script>
+        // mouseenter和mouseover 的区别 
+        //  mouseenter不会触发冒泡
+        // mouseover 会触发冒泡
+        var father = document.querySelector('.father');
+        var son = document.querySelector('.son');
+        father.addEventListener('mouseover', function() {
+            console.log('父亲');
+        })
+        document.addEventListener('click', function() {
+            console.log('我被点击了');
+        }, true);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 要求：
+        /*
+         //  1、创建一个电脑对象，要求颜色、重量、品牌、型号，功能：看电影、听音乐、打游戏和敲代码
+         //  2、创建一个 按钮对象，要求对象有宽、高、背景颜色和点击行为
+         //  3、创建一个车的对象，要求重量、颜色、牌子、功能，载人、拉货和耕田
+         //  4、写一个函数，实现反转任意数组。
+         //  5、写一个函数，实现对数字数组的排序。 冒泡排序
+         //  6、简易计算器
+        */
+
+        // 对象题
+        function Computer(color, weight, brand) {
+            this.color = color;
+            this.weight = weight;
+            this.brand = brand;
+            this.Fn = function() {
+                console.log('see a movie');
+                console.log('play games');
+                console.log('codeing');
+            }
+        }
+        var product = new Computer('red', '1.6kg', 'lenovo');
+        // console.log(product);
+
+        // 
+        function Btn(height, width, bcg) {
+            this.height = height;
+            this.width = width;
+            this.bcg = bcg;
+            this.Click = function() {
+                console.log('点击了一下');
+            }
+        }
+        var button = new Btn(20, 20, 'red');
+        // console.log(button);
+        //
+        function Car(weight, color, type) {
+            this.weight = weight;
+            this.color = color;
+            this.type = type;
+            this.Fn1 = function() {
+                console.log('载人');
+            }
+            this.Fn2 = function() {
+                console.log('拉货');
+            }
+            this.Fn3 = function() {
+                console.log('耕田');
+            }
+        }
+        var product2 = new Car('1t', 'white', '奔驰');
+        // console.log(product2);
+
+
+        // 函数题
+        var arr = ['李神', '廖振林', '冯晓虎', '贺基文'];
+        var arr2 = []; // 接受反转的数组
+        function Reversal() {
+            for (var i = arr.length - 1; i >= 0; i--) {
+                arr2[arr2.length] = arr[i];
+            }
+            console.log(arr2);
+        }
+        // Reversal(); // 调用函数
+
+        // 冒泡排序
+        function sort(index) {
+            for (var i = 0; i < index.length - 1; i++) { // 外层循环
+                for (var j = 0; j < index.length - i - 1; j++) { // 内存循环
+                    if (index[j] > index[j + 1]) {
+                        let temp = index[j + 1];
+                        index[j + 1] = index[j];
+                        index[j] = temp;
+                    }
+                }
+            }
+            return index;
+        }
+
+        var result = sort([55, 15, 1561, 151, 15, 1]);
+        // console.log(result);
+
+
+        // 计算器 （没有必要）
+        var num = prompt('请输入1-4,分别代表加减乘除');
+        // 数据类型转换
+        num = Number(num);
+
+        switch (num) {
+            case 1:
+                var num2 = prompt('请输入第一个数字');
+                num2 = Number(num2);
+                var num3 = prompt('请输入第二个数字');
+                num3 = Number(num3);
+                var result = num2 + num3;
+                alert(result);
+                break;
+            case 2:
+                var num2 = prompt('请输入第一个数字');
+                num2 = Number(num2);
+                var num3 = prompt('请输入第二个数字');
+                num3 = Number(num3);
+                var result = num2 - num3;
+                alert(result);
+                break;
+            case 3:
+                var num2 = prompt('请输入第一个数字');
+                num2 = Number(num2);
+                var num3 = prompt('请输入第二个数字');
+                num3 = Number(num3);
+                var result = num2 * num3;
+                alert(result);
+                break;
+            case 4:
+                var num2 = prompt('请输入第一个数字');
+                num2 = Number(num2);
+                var num3 = prompt('请输入第二个数字');
+                num3 = Number(num3);
+                var result = num2 / num3;
+                alert(result);
+                break;
+            default:
+                alert('没有匹配的值');
+        }
+    </script>
+</body>
+
+</html>

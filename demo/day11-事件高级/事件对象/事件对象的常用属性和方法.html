@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: Red;
+        }
+    </style>
+</head>
+
+<body>
+    <div>123</div>
+    <ul>
+        <li>abc</li>
+        <li>abc</li>
+        <li>abc</li>
+    </ul>
+    <script>
+        // 事件对象的常用属性和方法
+        // 1、e.target 返回的是 触发事件的对象 (元素);  this 返回的是绑定事件的对象(元素) ie6,ie7,ie8不识别
+        // 区别: e.target 点击了那个元素，就返回那个元素  this 那个元素绑定了这个点击事件，那么就返回谁
+        var div = document.querySelector('div');
+        div.addEventListener('click', function(e) {
+            console.log(e.target);
+            console.log(this);
+        })
+        var ul = document.querySelector('ul');
+        ul.addEventListener('click', function(e) {
+            // 我们给ul 绑定了事件 那么this 就指向 ul 
+            console.log(this); // ul
+            // 返回li 指向我们点击的那个对象 谁触发了这个对象 我们点击的是li e.target 指向的就是li
+            console.log(e.target); // li
+            console.log(e.currentTarget); // ul
+        })
+
+        // 兼容性问题 ie6,7,8可以执行 了解就行
+        div.onclick = function(e) {
+            e = e || window.event;
+            var target = e.target || e.srcElement;
+            console.log(target);
+        }
+
+
+        // 跟 this有点非常相似的属性  currentTarget 谁绑定了这个事件 ie6,7,8不认识
+    </script>
+</body>
+
+</html>

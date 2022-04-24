@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .box {
+            width: 960px;
+            height: 200px;
+            margin: 100px auto;
+        }
+        
+        .message {
+            position: relative;
+            top: -15px;
+            width: 170px;
+            height: 20px;
+            border: 1px solid red;
+            display: none;
+        }
+        
+        .message::before {
+            content: '';
+            position: absolute;
+            top: 20px;
+            left: 15px;
+            border: 10px solid red;
+            border-color: red transparent transparent transparent;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="message"></div>
+        <input type="text"><button>查询</button>
+    </div>
+    <script>
+        var text = document.querySelector('input');
+        var message = document.querySelector('.message');
+        text.addEventListener('keyup', function(e) {
+            if (text.value == '') {
+                console.log('你还没有值');
+                message.style.display = 'block';
+                message.innerHTML = '你还没有值';
+            } else {
+                message.innerHTML = text.value;
+            }
+        });
+        // 失去焦点
+        text.addEventListener('blur', function() {
+            message.style.display = 'none';
+        });
+        // 获得焦点
+        text.addEventListener('focus', function() {
+            message.style.display = 'block';
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 筛选数组中大于20 小于等于10的数
+        var arr = [1, 2, 22, 21, 10, 9, 30];
+        var num = '';
+        var num2 = '';
+        for (var i = 0; i < arr.length; i++) {
+            if (arr[i] > 20) {
+                num += arr[i]
+                num += ' ';
+            }
+        }
+        console.log('数组中大于20的有:' + num);
+        for (var i = 0; i < arr.length; i++) {
+            if (arr[i] <= 10) {
+                num2 += arr[i]
+                num2 += ' ';
+            }
+        }
+        console.log('数组中小于10的有:' + num2);
+    </script>
+</body>
+
+</html>

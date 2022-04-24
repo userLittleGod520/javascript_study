@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>动态生成表格</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .box {
+            margin: 100px auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <table border="1">
+        </table>
+    </div>
+    <script>
+        // 创建页面节点
+        var table = document.querySelector('table');
+        var thead = document.createElement('thead');
+        table.appendChild(thead);
+        var tbody = document.createElement('tbody');
+        table.appendChild(tbody);
+        var thead = document.querySelector('thead');
+        var tbody = document.querySelector('tbody');
+        var student = [{
+            name: '甲',
+            score: 100,
+            subject: '语文'
+        }, {
+            name: '乙',
+            score: 100,
+            subject: '语文'
+        }, {
+            name: '丙',
+            score: 100,
+            subject: '语文'
+        }];
+        var student_class = [{
+            name: '姓名',
+            score: '得分',
+            subject: '学科'
+        }];
+        for (var i = 0; i < student.length; i++) {
+            var tr = document.createElement('tr');
+            thead.insertBefore(tr, thead.children[0]);
+            for (var k in student_class[i]) {
+                var td = document.createElement('td');
+                td.innerHTML = student_class[i][k];
+                tr.appendChild(td);
+                console.log(name);
+            }
+        }
+        for (var i = 0; i < student.length; i++) {
+            var tr = document.createElement('tr');
+            tbody.appendChild(tr);
+            for (var k in student[i]) {
+                var td = document.createElement('td');
+                td.innerHTML = student[i][k];
+                tr.appendChild(td)
+            }
+        }
+    </script>
+</body>
+
+</html>

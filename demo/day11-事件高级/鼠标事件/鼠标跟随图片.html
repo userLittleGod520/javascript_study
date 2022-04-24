@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>鼠标跟随图片</title>
+    <style>
+        img {
+            position: absolute;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <img src="../image/1.gif" alt="">
+    <script>
+        // 获得页面页面节点
+        var img = document.querySelector('img');
+        document.addEventListener('mousemove', function(e) {
+            // console.log(e.pageX);
+            var x = e.pageX;
+            var y = e.pageY;
+            img.style.left = x - 20 + 'px';
+            img.style.top = y - 20 + 'px';
+        })
+    </script>
+</body>
+
+</html>

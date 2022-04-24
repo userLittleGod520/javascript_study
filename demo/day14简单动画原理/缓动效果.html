@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        div {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            border: 1px solid red;
+        }
+        
+        span {
+            position: absolute;
+            display: block;
+            width: 200px;
+            height: 200px;
+            border: 1px solid blue;
+            margin-top: 400px;
+        }
+    </style>
+</head>
+
+<body>
+    <div>1</div>
+    <span>2</span>
+    <script>
+        // 缓动效果 核心算法 盒子每次移动 慢慢变下来 10px 到 9px (目标值 - 现在的位置) / 10;
+        //  让盒子停下来 就是让当前盒子位置   等于目标位置  就是停止定时器
+
+        // 缓存效果 
+        var div = document.querySelector('div');
+        var span = document.querySelector('span');
+        // 设置定时器函数
+        function move(obj, target) {
+            // 设置定时器
+            obj.timer = setInterval(function() {
+                var step = (target - obj.offsetLeft) / 10;
+                // 判断 盒子的边距 不能大于等于 参数
+                if (obj.offsetLeft >= target) {
+                    // 大于或等于 参数 则 清除定时器
+                    clearInterval(obj.timer);
+                }
+                obj.style.left = obj.offsetLeft + step + 'px';
+            }, 15)
+        }
+        move(div, 200);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <ol>
+        <li>我的li1</li>
+        <li>我的li2</li>
+        <li>我的li3</li>
+        <li>我的li4</li>
+    </ol>
+    <script>
+        // 获取子节点第一个和最后一个 (firstElementChild,lastElementChild Ie9+)
+        var ol = document.querySelector('ol');
+        // firstChild 获取第一个子节点 不管是文本还是元素 
+        // firstElementChild  获取第一个元素节点 找不到 null
+        // lastElementChild   获取最后一个元素节点 
+        console.log(ol.firstElementChild);
+        console.log(ol.lastElementChild);
+
+        // 实际开发写法 没有兼容性
+        console.log(ol.children[0]);
+        console.log(ol.children[ol.children.length - 1]); // 最后一个
+    </script>
+</body>
+
+</html>

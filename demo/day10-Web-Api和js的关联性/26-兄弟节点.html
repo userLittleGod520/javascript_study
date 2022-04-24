@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>哥</div>
+    <span>弟</span>
+    <div class="box">
+        <div class="ge"></div>
+        <div class="di"></div>
+    </div>
+    <script>
+        // 兄弟节点
+        // node.nextSibling(下一个兄弟节点，找不到则返回null包含元素节点和文本节点)
+        // node.previousSibling(上一个兄弟节点,找不到则返回null)
+
+        var div = document.querySelector('div');
+        var span = document.querySelector('span');
+        console.log(div.nextSibling); // text 返回换行 包含所有节点类型
+        console.log(span.previousSibling); // text 返回换行 包含所有节点类型
+
+        // node.nextElementSibling 得到下一S个兄弟节点
+        var ge = document.querySelector('.ge');
+        console.log(ge.nextElementSibling); // 获得di
+        // node.previousElementSibling
+        console.log(ge.previousElementSibling) // 得到 dage
+    </script>
+</body>
+
+</html>

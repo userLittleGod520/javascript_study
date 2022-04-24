@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 冒泡排序
+        function sort(arr) {
+            for (var i = 0; i < arr.length - 1; i++) {
+                for (var j = 0; j < arr.length - i - 1; j++) {
+                    // 判断数组里面的数的大小 交换变量
+                    if (arr[i] > arr[j + 1]) {
+                        var temp = arr[j];
+                        arr[j] = arr[j + 1];
+                        arr[j + 1] = temp;
+                    }
+                }
+            }
+            return arr;
+        }
+        console.log(sort([20, 10, 50, 41, 3, 4]));
+    </script>
+</body>
+
+</html>

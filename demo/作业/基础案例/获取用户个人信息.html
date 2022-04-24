@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>获取用户个人信息</title>
+</head>
+
+<body>
+    <ul>
+
+    </ul>
+    <script>
+        // 使用变量存储 用户个人信息
+        var user = [{
+            name: '李神',
+            age: 18,
+            gender: 'man',
+        }, {
+            name: '李神2',
+            age: 18,
+            gender: 'man',
+        }, {
+            name: '李神3',
+            age: 18,
+            gender: 'man',
+        }];
+        // for循环用户变量
+        for (var i = 0; i < user.length; i++) {
+            // 获取ul
+            var ul = document.querySelector('ul');
+            // 使用for……in 循环对象 user
+            for (var k in user[i]) {
+                // 创建li 
+                var li = document.createElement('li');
+                li.innerHTML = user[i][k];
+                ul.appendChild(li);
+            }
+        }
+    </script>
+</body>
+
+</html>

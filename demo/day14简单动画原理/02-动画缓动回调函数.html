@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        div {
+            margin-top: 50px;
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            border: 1px solid red;
+        }
+        
+        span {
+            position: absolute;
+            display: block;
+            width: 300px;
+            height: 300px;
+            border: 1px solid blue;
+            margin-top: 300px;
+        }
+    </style>
+</head>
+
+<body>
+    <div>hello</div>
+    <span>love</span>
+    <button>点击到500</button>
+    <button class="btn">点击到800</button>
+    <script>
+        // 回调函数写在定时器结束
+        // 把函数当成实参写进入 ，如何在定时器函数里面执行。写在定时器结束里面
+        // 获取页面DOM节点
+        var div = document.querySelector('div');
+        var span = document.querySelector('span');
+        var btn = document.querySelector('button');
+        var btn2 = document.querySelector('.btn')
+            // 创建 定时器函数
+        function move(obj, target, callback) {
+            console.log(callback);
+            // 设置 定时器
+            clearInterval(obj.timer);
+            obj.timer = setInterval(function() {
+                // (目标位置 - 当前位置) / 10 
+                var step = (target - obj.offsetLeft) / 10;
+                // 取值  平均值  Math.ceil 向上取整  Math.floor 向下取整
+                step = step > 0 ? Math.ceil(step) : Math.floor(step);
+                if (obj.offsetLeft == target) {
+                    clearInterval(obj.timer);
+                    if (callback) { // 判断是否有callback函数
+                        callback(); // 有则调用
+                    }
+                }
+                obj.style.left = obj.offsetLeft + step + 'px';
+            }, 30)
+        }
+        move(div, 200);
+        btn.addEventListener('click', function() {
+            move(span, 500);
+        });
+        btn2.addEventListener('click', function fn() {
+            move(span, 800, function fn() {
+                alert('回调函数');
+                span.style.backgroundColor = 'red';
+            });
+        })
+    </script>
+</body>
+
+</html>

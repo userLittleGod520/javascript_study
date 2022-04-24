@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //  continue 和 break
+        //   continue关键字 用于立即跳出本次循环，继续执行下一循环
+        for (var i = 1; i <= 5; i++) {
+            //  满足条件  遇到continue 跳出本次循环 直接跳到i++
+            if (i == 3) {
+                continue;
+            }
+            console.log('我正在吃第' + i + '个包子');
+        }
+        // 求 1-100 之间 除了能被7乘除的数字
+        sum = 0;
+        for (var i = 1; i <= 100; i++) {
+            //  满足条件  遇到continue 跳出本次循环 直接跳到i++
+            if (i % 7 == 0) {
+                continue;
+            }
+            sum += i;
+        }
+        console.log(sum);
+
+        //  break 用于立即调出整个循环
+        for (var i = 1; i <= 5; i++) {
+            //  满足条件  遇到break 跳出整个循环 
+            if (i == 3) {
+                break;
+            }
+            console.log('我正在吃第' + i + '个包子');
+        }
+    </script>
+</body>
+
+</html>

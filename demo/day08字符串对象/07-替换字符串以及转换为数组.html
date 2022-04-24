@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 替换字符串以及转换为数组
+        // 1、替换字符 replace('被替换的字符'，'替换为的字符');
+        // (1)只会替换第一个字符
+        var str = 'helloll';
+        console.log(str.replace('ll', 'r')); // heroll
+
+        // 案例 将字符串'dghasdgjashdgasjdagdk' 里面得h 替换为v
+        var str2 = 'dghasdgjashdgasjdagdk';
+        while (str2.indexOf('h') !== -1) {
+            str2 = str2.replace('h', 'v');
+        }
+        console.log(str2);
+
+        // 2、字符转换为数组 split('分隔符') join 把数组 转换为字符串
+        // split里面的分隔符 根据字符串的分隔符 进行分割
+        var str2 = 'good,yes,haha';
+        console.log(str2.split(','));
+
+        // 将数组转换为字符串
+        var arr = ['red', 'yes', 'haha'];
+        console.log(arr.join(','));
+    </script>
+</body>
+
+</html>

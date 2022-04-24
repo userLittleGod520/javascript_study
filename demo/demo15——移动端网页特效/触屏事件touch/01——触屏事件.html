@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        div {
+            width: 100px;
+            height: 100px;
+            background-color: Red;
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+    <script>
+        // 移动端 触屏事件  在移动端 没有鼠标的概念 只有 模拟用户手指
+        // 1.touchstart  手指触摸时 触发元素
+        var div = document.querySelector('div');
+        div.addEventListener('touchstart', function(e) {
+                console.log('摸到了元素');
+                console.log(e)
+            })
+            // 2、touchmove  手指滑动元素时触发
+        div.addEventListener('touchmove', function() {
+                console.log('继续摸');
+            })
+            // 3、touchend  手指离开元素时触发
+        div.addEventListener('touchend', function() {
+            console.log('老子不摸了');
+            // console.log(e);
+        })
+    </script>
+</body>
+
+</html>

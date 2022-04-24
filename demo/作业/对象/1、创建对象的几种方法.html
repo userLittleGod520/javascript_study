@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 创建对象的 三种方式
+        // 1、字面量
+        var obj = {
+            name: '李神',
+            age: 19,
+            sex: '男'
+        }
+        console.log(obj.name); // 李神
+        console.log(obj['name']); // 李神
+
+        // 2、使用 new Object创建对象
+        var obj2 = new Object();
+        obj2.name = '李神2';
+        obj2.age = 19;
+        obj2.sex = '男';
+        console.log(obj2.name);
+
+        // 3、使用 构造函数创建对象
+        var Obj3 = function(name, age, sex) {
+            this.name = name;
+            this.age = age;
+            this.sex = sex;
+        }
+        var name2 = new Obj3('李神3', 19, '男');
+        console.log(name2.name);
+
+        var Hero = function(name, type, blood, attack) {
+            this.name = name;
+            this.type = type;
+            this.blood = blood;
+            this.attack = attack;
+        }
+        var tianhai = new Hero('天海', '永劫无间', '肉', '大佛抓人');
+        console.log(tianhai['name']);
+    </script>
+</body>
+
+</html>

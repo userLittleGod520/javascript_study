@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // DOM(文档对象模型)
+        /*
+        答：DOM就是一个接口 DOM树 文档流(document) 元素(element) 节点(元素的属性 node)
+        DOM 把里面的东西看作 一个对象
+
+        //1、获取元素ID 
+               // ID 标签名(document.getElementById('字符串')
+              //  get 获得 element 元素 By 通过 驼峰式命名
+             //   参数是大小写铭感的字符串
+            //    返回的是元素对象
+
+
+        //2、通过标签名来获取页面元素 
+            // document.getElementsByTagName('标签名')
+          //   返回带有指定标签名的对象的集合 会以伪数组的方式来进行存储
+        //     数组方法使用和 循环 
+      //       因为得到的是一个对象的集合，需要操作对象时要进行 遍历
+    //         得到元素对象时动态的
+  //           不管获取的元素个数 都是 以伪数组进行存储  没有标签 空 伪数组
+//             指定父元素 进行获取 elements.getElementsByTagName('li');
+
+
+        // 3、html新增 获取元素获取元素方式
+         // 3/1 document.getElementsByClassName('li'); 返回伪数组
+         // 3/2 querySelector 返回自定元素 的第一个元素
+
+        */
+    </script>
+    <button id="str"></button>
+    <ol>
+        <li>1</li>
+        <li>1</li>
+        <li>1</li>
+        <li>1</li>
+        <li>1</li>
+        <li>1</li>
+    </ol>
+    <dl>
+        <li>1</li>
+        <li>1</li>
+        <li>1</li>
+        <li>1</li>
+        <li>1</li>
+        <li>1</li>
+    </dl>
+    <button class="box"></button>
+    <script>
+        // 1、获取页面 按钮 
+        var str = document.getElementById('str');
+        console.log(str); // 返回元素
+        console.dir(str); // 元素对象 看属性和方法
+        // 2、获取标签名
+        var lis = document.getElementsByTagName('li');
+        // console.log(lis);
+        // console.log(lis[0]);
+        var ol = document.getElementsByTagName('ol'); // 伪数组
+        // ol.getElementsByTagName(li); // 错误 没有找到li
+        // var ol2 = ol[0].getElementsByTagName(li); // 正确
+
+
+        // 3、html新增方法
+        // 3/1、类名获取元素 得到一个伪数组
+        var box = document.getElementsByClassName('box');
+        console.log(box);
+        // 3/2、 querySelector 返回指定选择器 的第一个元素 选择器 加类名.box || ID名 #
+        var first = document.querySelector('li');
+        console.log(first);
+        // 3/3、querySelectorAll 返回全部指定 选择器 集合 伪数组 加类名和ID
+        var ol = document.querySelectorAll('.box');
+        console.log(ol);
+
+
+        // 4、获取特殊元素标签
+        // 4/1  获取body元素
+        var bodyEle = document.body;
+        console.log(bodyEle);
+        console.dir(bodyEle);
+        // 4/2 获取HTML元素
+        var htmlEle = document.documentElement;
+        console.log(htmlEle);
+        console.dir(htmlEle);
+    </script>
+</body>
+
+</html>

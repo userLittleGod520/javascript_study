@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 循环一个数组的最大值
+        function getArrMax(arr) {
+            var max = arr[0];
+            for (var i = 1; i <= arr.length; i++) {
+                if (arr[i] > max) {
+                    max = arr[i]
+                }
+            }
+            return max;
+        }
+        var result = getArrMax([12, 23, 32, 100]);  // 实际开发 用变量来接收函数 返回值 
+        console.log(result);
+    </script>
+</body>
+
+</html>

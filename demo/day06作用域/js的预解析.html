@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /*
+                                   ***   js中的预解析 运行的 两步
+                                   
+                                        ** 2步 预解析 和 代码执行 
+                                        
+                                          * 预解析分为  变量预解析(变量提升) 和 函数预解析(函数提升)
+                                            * (1)变量提升 把所有的  变量声明 提升到当前作用域的最前面  不提升赋值操作
+                                            * (2)函数提升 
+                                    **   变量提升的步骤和运行过程
+                                     *   函数提升的步骤和运行过程
+
+                                     /* 1、问
+                                      * console.log(num)  没有定义变量
+
+                                    / 2、问
+                                       * console.log(num);
+                                         // var num = 10;   // underfined 坑1
+
+                                    / 3、问
+                                        / fn();
+                                       *function fn(){
+                                          * console.log('关键字函数上下都可以访问');
+                                        }
+                           
+                                    /  4、问
+                                           fun();  // 报错   坑2
+                                       / * var fun = function(){  
+                                          * console.log(22);
+                                       *  }    */
+
+        console.log(num); // 没有定义变量  报错
+        //--------------------------------------------------------------------------------------------
+
+        console.log(num); // 报错 underfined
+        var num = 10;
+        // 变量预解析  代码如下->
+        var num;
+        conosle.log(num);
+        num = 10; // 变量提升只将 num 声明 当前作用域的最前面 不提升赋值操作
+        //--------------------------------------------------------------------------------------------
+
+        fn();
+
+        function fn() {
+            console.log('我可以执行');
+        } // 函数预解析  代码如下->
+        function fn() {
+            console.log('我可以执行');
+        }
+        fn(); // 函数提升会帮  函数声明提升到 最前面 
+
+        //--------------------------------------------------------------------------------------------
+
+        fun();
+        var fun = function() {
+                console.log('1234'); // 报错 未定义函数
+            }
+            // 函数预解析  代码如下->
+        var fun;
+        fun();
+        fun = function() {
+            console.log('1234'); // 函数提升 将函数声明提升 到当前作用域最前面  不调用函数
+        }
+
+
+        fn(); //坑 2
+        var fn = function() {
+            console.log(num);
+        }
+        var num = 10;
+
+        //  代码如下
+        // var fn;
+        // fn();
+        // function = (){
+        //     console.log(num);
+        // }
+        // var num;
+        // num = 10;
+
+
+
+
+
+
+        // --------  面试题 ---------------------------------
+        f1();
+        console.log(a);
+        console.log(b);
+        console.log(c);
+
+        function f1() {
+            var a = b = c = 9;
+            console.log(a);
+            console.log(b);
+            console.log(c);
+        }
+        // 代码如下
+        function f1() {
+            var a;
+            var a = b = c = 9; // 相当于 var a = 9; b = 9, c = 9; b 和 c没有 var 声明变量 相当于 全局变量
+            console.log(a); // 9
+            console.log(b); // a
+            console.log(c); // 9
+        }
+        f1(); // 执行  110行
+        console.log(a); // a是 局部变量  is a not defined
+        console.log(b); // b是 全局变量  = 9
+    </script>
+</body>
+
+</html>

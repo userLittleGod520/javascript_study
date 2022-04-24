@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .box {
+            width: 300px;
+            height: 400px;
+            border: 1px solid red;
+            background-color: Red;
+            margin: 100px auto;
+        }
+        
+        .content {
+            width: 250px;
+            height: 280px;
+            /* border: 1px solid black; */
+            margin: 20px auto;
+        }
+        
+        .box .content h1 {
+            color: white;
+            font-size: 46px;
+            text-align: center;
+            margin-top: 80px;
+        }
+        
+        h2 {
+            font-family: 'Times New Roman', Times, serif;
+            color: seashell;
+            text-align: center;
+        }
+        
+        .content img {
+            width: 20%;
+            margin-left: 100px;
+        }
+        
+        .content p {
+            font-size: 24px;
+            color: white;
+            font-weight: bold;
+            text-align: center;
+        }
+        
+        .time {
+            width: 200px;
+            height: 50px;
+            /* background-color: blue; */
+            margin: -70px auto;
+        }
+        
+        .time span {
+            display: block;
+            position: relative;
+            width: 50px;
+            height: 50px;
+            background-color: black;
+            float: left;
+            margin-left: 10px;
+            font-size: 36px;
+            text-align: center;
+            line-height: 50px;
+            color: white;
+        }
+        
+        .time span::before {
+            content: ':';
+            position: absolute;
+            right: -10px;
+            color: black;
+        }
+        
+        .time span:last-child::before {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="content">
+            <h1>京东秒杀</h1>
+            <h2>FLASH DEALS</h2>
+            <img src="../image/2.png" alt="">
+            <p>本场距离结束还剩</p>
+        </div>
+        <div class="time">
+            <span class="hour"></span>
+            <span class="minute"></span>
+            <span class="second"></span>
+        </div>
+    </div>
+    <script>
+        // 京东倒计时案例
+        var span = document.querySelector('span');
+        var hour = document.querySelector('.hour');
+        var minute = document.querySelector('.minute');
+        var second = document.querySelector('.second')
+        setInterval(getTime, 1000);
+
+        function getTime() {
+            var date = new Date();
+            var last_time = +new Date();
+            var input_time = new Date('2022-3-20 20:00:00');
+            var time = (input_time - last_time) / 1000;
+            // console.log(time);
+            var h = parseInt(time / 60 / 60 % 24);
+            var h = h < 10 ? '0' + h : h;
+            hour.innerHTML = h;
+            var m = parseInt(time / 60 % 60);
+            var m = m < 10 ? '0' + m : m;
+            minute.innerHTML = m;
+            var s = parseInt(time % 60);
+            var s = s < 10 ? '0' + s : s;
+            second.innerHTML = s;
+            // console.log(s);
+        }
+        getTime();
+    </script>
+</body>
+
+</html>

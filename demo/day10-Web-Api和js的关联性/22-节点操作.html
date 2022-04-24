@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 节点的优点 -->
+    <div>我是div</div>
+    <span>我是span</span>
+    <ul>
+        <li>我是 li</li>
+        <li>我是 li</li>
+        <li>我是 li</li>
+        <li>我是 li</li>
+    </ul>
+    <div class="box">
+        <span class='avg'>关闭二维码</span>
+    </div>
+    <script>
+        // 节点操作 (节点类型(nodeType)，节点名称(nodeName)，节点值(nodeValue))
+        // 获取元素通常使用两种方式 (利用DOM节点操作)
+        // 1、Web Api(document.getElementById,getElementsByTagName,querySelector)
+        // Web Api逻辑性不强、 繁琐
+        // 2、利用节点层级关系 获取元素(利用父子兄级元素获取 元素) 逻辑性强、兼容性差
+
+        // 节点类型:(nodeType) 一元二属三文  实际开发 操作元素节点
+        // 元素节点:1
+        // 属性节点:2
+        // 文本节点:3 (包含文字、空格、换行等)
+        var box = document.querySelector('.box');
+        console.dir(box);
+    </script>
+</body>
+
+</html>

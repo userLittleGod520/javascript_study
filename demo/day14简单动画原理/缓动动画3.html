@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        div {
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            width: 200px;
+            height: 200px;
+            border: 1px solid red;
+            margin-top: 100px;
+        }
+        
+        span {
+            position: absolute;
+            display: block;
+            width: 200px;
+            height: 200px;
+            border: 1px solid blue;
+            margin-top: 400px;
+        }
+    </style>
+</head>
+
+<body>
+    <button>love先走500</button>
+    <button>走800</button>
+    <div>hello</div>
+    <span>love</span>
+    <script>
+        var div = document.querySelector('div');
+        var span = document.querySelector('span');
+        var button = document.querySelectorAll('button');
+        // 设置动画函数
+        function animate(obj, target, callback) {
+            // 清除上一次定时器
+            clearInterval(obj.timer);
+            obj.timer = setInterval(function() {
+                var step = (target - obj.offsetLeft) / 10;
+                step = step > 0 ? Math.ceil(step) : Math.floor(step);
+                if (obj.offsetLeft == target) {
+                    clearInterval(obj.offsetLeft);
+                }
+                obj.style.left = obj.offsetLeft + step + 'px';
+            }, 30)
+        }
+        animate(div, 300, function() {
+            console.log('我在动画函数执行完毕后开始');
+        });
+
+        button[0].addEventListener('click', function() {
+            animate(span, 500, function() {
+                console.log('我在动画函数执行完毕后开始');
+            })
+        })
+        button[1].addEventListener('click', function() {
+            animate(span, 800, function() {
+                console.log('我在动画函数执行完毕之后开始');
+            })
+        })
+    </script>
+</body>
+
+</html>

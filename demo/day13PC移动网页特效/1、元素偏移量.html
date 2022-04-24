@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .father {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            margin: 100px;
+            /* position: relative; */
+        }
+        
+        .son {
+            width: 100px;
+            height: 100px;
+            background-color: purple;
+            margin: 0px;
+        }
+        
+        .w {
+            width: 50px;
+            height: 50px;
+            background-color: white;
+            padding: 10px;
+            border: 10px solid red;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="father">father
+        <div class="son">son</div>
+        <div class="w"></div>
+    </div>
+    <script>
+        // 元素偏移量 offset ' 动态 '  获得该元素的 位置(便宜)、大小等
+        // 1、获得元素距离带有定位的父元素的位置
+        // 2、获得元素自身的大小 （宽度和高度）
+        // 3、注意：返回的数值都不带单位
+
+        var father = document.querySelector('.father');
+        var son = document.querySelector('.son')
+        var w = document.querySelector('.w');
+        console.log(father.offsetTop); // 获得margin 100
+        console.log(father.offsetLeft);
+        // 它以带有定位的父亲为准，父亲元素没有定位则以body为准。
+        console.log(son.offsetLeft); //
+
+
+        // 获取元素的大小、宽度和高度  padding和border 会撑大盒子 margin无效
+        console.log(w.offsetWidth);
+
+
+        // 获取元素的带有定位的父亲 否则返回是body  offset
+        console.log(w.offsetParent); // 返回 父亲元素 找有定位的父元素 没有定位返回  body
+        console.log(w.parentNode); // 返回父亲元素 不管有无定位 最近一级的父元素
+
+
+        // offset 和style的区别  获取元素大小位置用 offset更合适。  修改元素值 则需要使用 style改变
+        //  1、offset 能获取任意样式表中的样式值，而style只能获取行内样式中的样式值
+        //  2、offset系列 获取的数值是 没单位的。 而style 能获得带单位的字符串
+        //  3、offsetWidth 包含padding + border + width。 而style.width 获得不包含padding和border值
+        //  4、offsetWidth等属性 是只读属性，只能获取不能赋值   而style.width 是可读写属性，可以获取也可以赋值
+        console.log(son.offsetWidth); // 可以任意获得样式表的值
+        son.offsetWidth = '250px'; // 设置不了值，  只读性
+
+        console.log(son.style.width); // style只能获取 行内样式值
+        son.style.width = '250px'; // 可以修改
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id=wrap index="1" class="nav"></div>
+    <script>
+        // (1)获取其他元素
+        // 1、Element.属性 获取属性值 获取元素本身的属性
+        var div = document.querySelector('#wrap');
+        console.log(div.id); // wrap
+        // 2、Element.getAttribute('属性') get 获得 Attribute 属性的意思
+        // getAttribute获取 自己添加 的属性 称为自定义属性
+        console.log(div.getAttribute('id')); // wrap
+        console.log(div.getAttribute('index')); // 1 获取自定义属性
+
+
+
+        // (2)设置属性值
+        // 1、Element.属性 ='值'  主要设置内置属性 
+        div.id = 'wrap2'; // 将id改为 wrap2
+        div.className = 'navs';
+        div.setAttribute('class', 'navs');
+
+        // 2、Element.setAttribute('属性','值')，主要针对于 设置自定义属性
+        div.setAttribute('id', 'wrap'); // 将id更改回去
+
+        // 3、移除属性 removeAttribute(属性)
+        div.removeAttribute('class'); // 删除类属性
+    </script>
+</body>
+
+</html>

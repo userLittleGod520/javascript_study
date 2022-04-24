@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 字符串对象 'abdahsbdbada' 中最多出现的字母
+        var str = 'abdahsbdbada';
+        var o = {};
+        for (var i = 0; i < str.length; i++) {
+            var chars = str.charAt(i); // 保存每次循环出来的字母
+            if (o[chars]) {
+                o[chars]++;
+            } else {
+                o[chars] = 1;
+            }
+        }
+        console.log(o); // 得到每一个 字母
+        // 进行 for……in 循环对象
+        var max = 0;
+        var max_str = '';
+        for (var k in o) {
+            // k得到属性
+            // o[k]得到是属性值
+            if (o[k] > max) {
+                max = o[k];
+                max_str = k;
+            }
+        }
+        console.log(max); // 4 得到最多的字母
+        console.log('在' + str + '中' + '出现最多的字母是:' + max_str + '一共出现了' + max + '次');
+    </script>
+</body>
+
+</html>

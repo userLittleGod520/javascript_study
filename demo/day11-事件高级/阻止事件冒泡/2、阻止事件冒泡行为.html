@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .father {
+            width: 400px;
+            height: 400px;
+            background-color: Red;
+            margin: 100px auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .son {
+            width: 200px;
+            height: 200px;
+            background-color: purple;
+            /* margin: 0 auto; */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="father">
+        <div class="son">son儿子</div>
+        <script>
+            // 阻止事件冒泡的两种方式
+            // 1、利用事件对象的stopPropagation() 方法
+            // 2、兼容性 ie6,7,8  非标准  cancelBubble属性
+            var son = document.querySelector('.son');
+            var father = document.querySelector('.father');
+            son.addEventListener('click', function(e) {
+                console.log('son');
+                e.stopPropagation(); // 停止冒泡 stop 停止  Propagation 转播 (颇颇给神)
+                // e.cancelBubble(true); // 非标准 cancel 取消 bubble 泡泡 
+            }, false);
+            father.addEventListener('click', function() {
+                console.log('father');
+            }, false);
+            document.addEventListener('click', function() {
+                console.log('document');
+            }, false);
+            father.addEventListener('click', function() {
+                console.log('father');
+            })
+        </script>
+    </div>
+</body>
+
+</html>

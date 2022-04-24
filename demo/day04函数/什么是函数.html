@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 
+        // question 
+        /*
+           1、函数是做什么的?
+           答: 函数就是 将一段重复使用的代码块进行封装,使用的时候调用
+           2、声明函数用什么关键词?
+           答: function(){}
+           3、如何调用函数?
+           答:  函数名+()
+           4、封装是什么意思?
+           答: 封装就是将  重复冗杂的代码块进行打包  拿函数封装起来
+        */
+        function getSum() {
+            var sum = 0;
+            for (var i = 1; i <= 100; i++) {
+                sum += i;
+            }
+            console.log(sum);
+        }
+        getSum();
+    </script>
+</body>
+
+</html>

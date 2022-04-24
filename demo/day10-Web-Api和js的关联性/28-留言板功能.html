@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .box {
+            width: 960px;
+            margin: 50px auto;
+            border: 1px solid red;
+        }
+        
+        .content {
+            width: 960px;
+            height: 200px;
+            border: 1px solid red;
+            margin: 0px auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <textarea name="" id="words" cols="30" rows="10">
+        </textarea>
+        <input type="button" value="发布评论">
+    </div>
+    <div class="content">
+        <ul>
+            <li>123</li>
+        </ul>
+    </div>
+    <script>
+        // 留言板功能
+        // 案例分析:
+        // 点击按钮 动态创建li 添加到ul里面 判断用户输入是否有值
+        // 创建li的同时，将文本域里面的内容通过innerHTML赋值给li
+        // 想要新的留言在 后面就用appendChild 前面就用 insertBefore
+
+        // 1、获取元素
+        var btn = document.querySelector('input');
+        var text = document.querySelector('textarea');
+        var ul = document.querySelector('ul');
+        // 2、注册事件
+        btn.onclick = function() {
+            function getTime() {
+                var date = new Date();
+                var h = date.getHours();
+                var m = date.getMinutes();
+                var s = date.getSeconds();
+                var s = s < 10 ? '0' + s : s;
+                return h + ':' + m + ':' + s
+            }
+            if (text.value == '') {
+                alert('你还没有内容');
+            } else {
+                // 1、(创建元素)
+                var li = document.createElement('li');
+                // 先有li才能赋值
+                li.innerHTML = text.value + '于' + getTime() + '发布了一条信息';
+                // 2、 (添加元素)
+                // ul.appendChild(li); 最新的留言 放在第一条
+                ul.insertBefore(li, ul.children[0]);
+            }
+        }
+    </script>
+</body>
+
+</html>

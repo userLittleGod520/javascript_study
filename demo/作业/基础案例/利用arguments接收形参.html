@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>arguments形参的使用</title>
+</head>
+
+<body>
+    <script>
+        // 使用arguments
+        function arr() {
+            var max_num = arguments[0];
+            for (var i = 0; i < arguments.length; i++) {
+                if (max_num < arguments[i]) {
+                    max_num = arguments[i];
+                }
+            }
+            return max_num;
+        }
+        console.log(arr(20, 11, 50, 12, 80, 12, 180));
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        123
+    </div>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+    </ul>
+    <script>
+        // 事件委托 事件代理
+        //特性:100个快递，给100个学生只有一个快递员。让学生排队拿太慢了。
+        //解决方案: 把100个快递委托给班主任，学生下课自行拿
+        // 使用场景:ul里面10个li添加事件,非常辛苦。而且访问的DOM的次数越多，会延长整个页面的交互时间
+        // 原理:不是每一个子节点单独添加事件监听器，而是设置在父节点上面。然后利用冒泡原理影响每个子节点
+        // 给ul注册点击事件，然后利用事件对象的target来找到当期点击的li，因为点击li，
+        // 事件冒泡到ul上面ul注册事件，触发事件监听器
+
+        // 优点:只操作了一次DOM，提供了程序的性能
+
+        // 事件委托的核心思想:给父节点添加侦听器，利用事件冒泡影响每一个子节点
+        var lis = document.querySelectorAll('li');
+        var ul = document.querySelector('ul');
+        ul.addEventListener('click', function(e) {
+            // alert('haha');
+            // e.target  获得点击的对象
+            e.target.style.backgroundColor = 'pink';
+        })
+    </script>
+</body>
+
+</html>

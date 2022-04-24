@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div getTime='20' data-index="1" data-list-name='andy'></div>
+    <script>
+        // 自定义属性:  直接保存在页面  没必要在数据库里面调用
+        // 1、保存并使用数据
+        // 自定义属性 通过 getAttribute('属性')获取 浏览器通用
+        // 自定义属性规范 添加自定义属性 data-开头作为 属性名并赋值 例如data-index='';
+        var div = document.querySelector('div');
+        console.log(div.getTime); // undefined
+        // 或者在js 里面设置自定义属性
+        div.setAttribute('data-index', 2);
+        // (1)获取元素属性方法
+        console.log(div.getAttribute('data-index')); // 2 
+        console.log(div.getAttribute('data-list-name')); // andy
+        // 2 HTML5新增(Ie11+) 获取元素方法 只能获取以data开头的方式
+        // 2(1) dataset 是一个集合里面 存放了所有以data开头的自定义属性
+        // 2(2) Element.dataset(获取元素全部的以data开头属性)
+        // 2(3) Element.dataset.index (获取属性为 data-index的属性)
+        // 2(4) Element.dataset['index'];  获取 data-index 属性;
+        // 2(5) 属性名为data-list-name用 Element.dataset.listName 驼峰命名法
+        console.log(div.dataset);
+        console.log(div.dataset.index); // 2
+        console.log(div.dataset['index']);
+        console.log(div.dataset.listName);
+        console.log(div.dataset['listName']);
+    </script>
+</body>
+
+</html>

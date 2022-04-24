@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .box {
+            width: 960px;
+            margin: 100px auto;
+            /* border: 1px solid red; */
+        }
+        
+        .wrong {
+            background-image: url('./image/wrong.png');
+            background-repeat: no-repeat;
+        }
+        
+        img {
+            width: 25px;
+        }
+        
+        .message {
+            width: 100px;
+            display: inline;
+            background-image: url('./image/mess.png');
+            color: Red;
+            font-size: 20px;
+            background-repeat: no-repeat;
+            padding-left: 25px;
+            background-position: left center;
+            background-position: 10px;
+        }
+        
+        .wrong {
+            background-image: url('./image/wrong.png');
+            color: red;
+        }
+        
+        .right {
+            background-image: url('./image/right.png');
+            color: green;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <label for="">设置密码:</label><input type="password">
+        <img src="./image/show.jpg" alt="">
+        <p class='message'></p>
+    </div>
+    <script>
+        //  1、获取页面DOM节点
+        var text = document.querySelector('input');
+        var img = document.querySelector('img');
+        var message = document.querySelector('.message');
+        var flag = 0;
+        // 2、注册事件
+        img.onclick = function() {
+            if (flag == 0) {
+                this.src = './image/close.jpg';
+                text.type = 'text';
+                flag++;
+            } else {
+                this.src = './image/close.jpg';
+                text.type = 'password';
+                flag = 0;
+            }
+        }
+
+        // 3、 判断长度
+        text.onblur = function() {
+            console.log(666);
+            if (this.value.length < 6 || this.value.length > 16) {
+                message.className = 'message wrong';
+                message.innerHTML = '密码长度不能低于6位数';
+            } else {
+                message.className = 'message right';
+                message.innerHTML = '设置成功!';
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //数组就是一组数据的集合 。 元素  + 小标   下标从0开始  
+        // 创建数组两种方法:
+        /*1、使用关键字 new 创建数组
+        var arr = new Array();  // 空数组
+           2、数组字面量 
+           var arr = [];  // 空数组
+           var arr1 = [1,2,3]; 逗号分隔 
+        获取数组元素
+        */
+        var arr = [1, 2, 3, true, '李神'];
+        console.log(arr);
+        console.log(arr[3]); // 获取索引下标 输出
+
+        // 案例一  星期一到星期天 输出星期天
+        var data = ['星期一', '星期二', '星期三', '星期四', '星期五', '星期六', '星期天'];
+        // 获取 星期天
+        console.log(data[6]);
+
+        // 遍历数组  从头到尾访问，下标不一样  for循环
+        var shuzu = [1, 2, 3, 4, 5];
+        for (var i = 0; i < 5; i++) {
+            console.log(shuzu[i]);
+        }
+        // 1、因为 获取数组一样 从0开始， 所以i从0开始 里面有多少数据 遍历多少次
+        // 2、输出的时候 数组名 + [循环体i] i当计数器当索引号来用
+
+        // 案例二  遍历数组 
+        var year = ['小明', '小李', '小欧', '小王', '小冯', '小廖', '小神'];
+        for (var i = 0; i < year.length; i++) {
+            console.log(year[i]);
+        }
+
+        // 数组长度 数组名.length。动态变换 根据数组长度的变化进行 遍历
+        // array.length 动态监测 数组元素的个数
+
+        // 案例三  求和以及平均值
+        var array = [2, 6, 1, 7, 4];
+        // 求所有元素的和以及平均值
+        var sum = 0;
+        var avat = 0;
+        var chengji = '';
+        for (var i = 0; i < array.length; i++) {
+            sum += array[i];
+            avat = sum / array.length;
+        }
+        document.write('数组的和值为:' + sum + '<br>'); // return 20;
+        document.write('数组的平均值为:' + avat); // return 4;
+        // 问题 
+        /*
+          * 什么是遍历?
+            答: 遍历就是从头到尾把数组元素全部进行一次遍历 使用for循环
+
+         ** 什么是我们通过什么来遍历数组里面的元素?
+            答: 我们通过for循环 + 动态获取数组长度 来进行 遍历数组
+        
+        *** for里面的i是什么?当什么用? for里面的数组元素怎么写?
+            答: for里面的i当计数器来使用， 通过条件判断来动态判断数组长度，
+                当索引号来使用
+                数组名[i]  就是获取数组元素的第i个元素;
+        
+        *** 怎么获取数组长度
+             答: 可以通过 array.length 来判断数组元素个数
+
+        ***数组索引号和数组长度有什么关系?
+        答: 没有关系 索引号从0开始  数组长度是 有多少元素就多少大
+         */
+    </script>
+</body>
+
+</html>

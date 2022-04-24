@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 删除指定数组元素 把数组 [2,0,6,4,78,85,11,0]; 不含0的数组
+        var new_arr = [];
+        var j = 0;
+
+        function Delete(arr) {
+            for (var i = 0; i < arr.length; i++) {
+                if (arr[i] != 0) {
+                    new_arr[j] = arr[i];
+                    j++;
+                }
+            }
+            return new_arr;
+        }
+        console.log(Delete([2, 0, 6, 4, 78, 85, 11, 0]));
+    </script>
+</body>
+
+</html>

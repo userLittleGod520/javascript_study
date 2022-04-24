@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            border: 10px solid red;
+            padding: 10px;
+            overflow: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div>我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是</div>
+    <script>
+        // scroll 系列
+        // scrollHeight 获取元素内容的实际大小 会被内容撑大 而client不会被撑大
+        // scrollHeight = scrollTop + 页面滚动下去的长度
+        // scrollTop 除了页面滚动下去的大小，上面的大小就是
+        var div = document.querySelector('div');
+        console.log(div.scrollHeight); // 不包含边框
+        console.log(div.scrollTop);
+        // scroll / onscroll 滚动事件  滚动条发生变化时会处罚的 事件
+        div.addEventListener('scroll', function() {
+            console.log(div.scrollTop); // 27 就是 除了滚动下去的大小
+        })
+    </script>
+</body>
+
+</html>

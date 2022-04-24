@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        div {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+    <script>
+        // 拖动元素
+        // 1、获取手指初始位置，原始盒子位置
+        // 2、获取手指滑动的距离 手指滑动距离 = 手指移动完后的位置 - 手指初始位置
+        // 3、盒子最终移动距离 = 原始盒子位置 + 手指滑动距离
+        var div = document.querySelector('div');
+        var startX = 0;
+        var startY = 0;
+        var x = 0;
+        var y = 0;
+        div.addEventListener('touchstart', function(e) {
+            var startX = e.targetTouches[0].pageX; // 获取手指初始x和y的位置
+            var startY = e.targetTouches[0].pageY;
+            var x = this.offsetLeft; // 获取盒子原始 位置
+            var y = this.offsetTop;
+        });
+        // 添加盒子移动触屏时间
+        div.addEventListener('touchmove', function(e) {
+            var moveX = e.targetTouches[0].pageX; // 获取 手指移动触屏完之后x和y的位置
+            var moveY = e.targetTouches[0].pageY;
+            // 手指滑动的距离 等于 滑动完之后x和y的位置  减去 滑动之前的原始位置
+            var moveX = moveX - startX;
+            var moveY = moveX - startY;
+            // 盒子原始的位置 + 手指滑动的距离
+            this.style.left = x + moveX + 'px';
+            this.style.top = y + moveY + 'px';
+            e.preventDefault();
+        })
+    </script>
+</body>
+
+</html>

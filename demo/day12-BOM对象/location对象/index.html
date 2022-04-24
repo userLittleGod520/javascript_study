@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 接收传收过来的参数 -->
+    <h1>首页</h1>
+    <p></p><span>欢迎光临</span>
+    <script>
+        // 接收值
+        console.log(location.search); // 得到值 去掉? ?username = lishen;
+        // 使用substr('起始的位置',截取几个字符串);
+        var value = location.search.substr(1); // 不写最后一个值，默认截取全部
+        console.log(value); // username = lishen;
+        // 2、利用 字符串分割数组 split('=');
+        var arr = value.split('=');
+        console.log(arr[1]);
+        var p = document.querySelector('p');
+        p.innerHTML = arr[1];
+    </script>
+</body>
+
+</html>

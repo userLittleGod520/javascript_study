@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text">
+    <script>
+        // 京东按键输入内容 点击s时, 光标就进入搜索框
+        // 1、核心思路:检测用户是否输入s键，如果按下s键。光标定位到搜索框里面
+        // 2、键盘事件里面的keyCode 判断用户是否输入s键
+        // 3、搜索框获得焦点，使用js onfocus方法
+        var text = document.querySelector('input');
+        document.addEventListener('keyup', function(e) {
+            // console.log(e.keyCode); // 83
+            if (e.keyCode === 83) {
+                text.focus();
+            }
+        })
+    </script>
+</body>
+
+</html>

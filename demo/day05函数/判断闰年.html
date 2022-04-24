@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 闰年 不能被100整除 和 能被400乘除的 数就是 闰年
+        // var year = prompt('请输入你的年份');
+        // if (year % 100 != 0 && year % 400 == 0 || year % 4 == 0) {
+        //     document.write(year + '是闰年');
+        // } else {
+        //     alert(year + '不是闰年');
+        // }
+        // 使用函数判断 年份
+        function ni() {
+            var year = prompt('请输入你的年份!');
+            if (year % 4 == 0 && year % 100 != 0 || year % 400 == 0) {
+                console.log(year + '是闰年');
+            } else {
+                console.log(year + '不是闰年');
+            }
+        }
+        ni();
+    </script>
+</body>
+
+</html>

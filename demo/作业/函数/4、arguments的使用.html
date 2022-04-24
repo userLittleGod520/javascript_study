@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // arguments的使用  
+        // arguments的展示形式 是一个 伪数组
+        // 1、具有length属性
+        // 2、按索引方式 存储数据
+        // 3、不具有数组的pop, push; pop 删除 push 增加
+        function Max_num() {
+            var max = arguments[0];
+            for (var i = 0; i < arguments.length; i++) {
+                if (max < arguments[i]) {
+                    max = arguments[i];
+                }
+            }
+            return max
+        }
+        console.log(Max_num(10, 20, 22, 11, 50, 111)); // 111
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 1、创建对象2 new Object{}
+        var obj = new Object(); // 创建了一个空对象 可以追加属性
+        obj.uname = '李神';
+
+
+        // 案例 创建鸣人
+        var role = new Object();
+        role.uname = '鸣人';
+        role.gender = 'man';
+        role.age = '19';
+        role.skill = '影分身';
+
+        console.log(role);
+        alert(typeof(role));
+
+        console.log(null == undefined); // return true
+        console.log(typeof(null)); // 空对象 == undefined;
+    </script>
+</body>
+
+</html>

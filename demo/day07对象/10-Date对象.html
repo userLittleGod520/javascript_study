@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // Date 对象 -> 构造函数 必须 new 调用创建日期对象
+        // Date对象和 Math对象不一样 是构造函数 必须实例化才可以用
+        // 1、获取当前时间必须实例化
+        // 2、Date()构造函数的参数 ()里面有时间，就返回里面参数时间  没有则 返回系统时间
+
+
+        var arr = new Array(); // 创建了个数组对象
+        var obj = new Object(); // 创建了一个对象实例
+
+        // 1.Date 如果没有参数 返回当前系统的当前时间
+        // 2.参数常用的写法 数字型 (2022,2,8)   ||  字符串型  '2022-2-8 8m:30s：10ms'
+        var date = new Date(); // 创建了一个日期对象
+        console.log(date);
+
+        var last = new Date(2020, 4, 19); // 返回的是 5月 不是4月
+        console.log(last);
+
+        var lastDay = new Date('2022-4-19'); // 返回 设置的时间
+        console.log(lastDay);
+
+
+        // 日期格式化 获取日期指定的部分
+        // getFullYear() // 返回当前 年
+        console.log(date.getFullYear()); // 2022
+
+        // getMonth()+1  // 返回当月 小1月 +1
+        console.log(date.getMonth() + 1); // 返回的月份小1月 记得 +1
+
+        //getDate() //返回周几
+        console.log(date.getDate()); // 返回几号
+
+        // getDay() // 返回星期1 == 1 星期六 ==6 but 星期天 == 0
+        console.log(date.getDay()); // 星期二 2
+
+        //  getHours() // 返回当前小时  getMinutes() 返回几分钟  getSeconds() 获取当前秒钟
+
+        // 案例 返回当前时间
+        var year = date.getFullYear();
+        var month = date.getMonth() + 1;
+        var day = date.getDate();
+        var week = date.getDay(); // 返回2 用数组保存起来 调用
+        var arr = ['星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六'];
+        var hours = date.getHours();
+        var minutes = date.getMinutes();
+        var second = date.getSeconds();
+        // 拼接时间
+        console.log('今天是:' + year + '年' + month + '月' + day + '日' + arr[week] + '  ' + hours + '点' + ':' + minutes + '分' + second + '秒');
+
+
+        //函数调用时间
+        function getTime() {
+            var date = new Date();
+            var h = date.getHours();
+            var m = date.getMinutes();
+            var s = date.getSeconds();
+            var s = s < 10 ? '0' + s : s;
+            return h + ':' + m + ':' + s
+        }
+        console.log(getTime());
+
+        // 获取Date 总毫秒数(时间戳)   距离 1970年1月1号过来多久
+        // 1、通过valueOf() getTime()
+        console.log(date.valueOf()); // 获取总毫秒数
+        console.log(date.getTime()); // 距离 1970年 1月 1日
+        // 简写 (最常用的方法)
+        var date1 = +new Date(); // +new Date() 返回总毫秒数
+        console.log(date1);
+        // H5 新增的方法
+        console.log(Date.now()); // 获取总的毫秒数
+    </script>
+</body>
+
+</html>

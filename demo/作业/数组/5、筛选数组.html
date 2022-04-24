@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 筛选数组 中 大于等于 10的元素 选出来  放入新数组
+        var newArr = [];
+
+        function chose(arr) {
+            for (var i = 0; i < arr.length; i++) {
+                if (arr[i] >= 10) {
+                    newArr[newArr.length] = arr[i];
+                }
+            }
+            return newArr;
+        }
+        console.log(chose([10, 20, 5, 4, 22, 1, 6]));
+
+        // 第二种方法
+        var newArr2 = [];
+        var j = 0;
+
+        function chose2(arr2) {
+            for (var i = 0; i < arr2.length; i++) {
+                if (arr2[i] >= 10) {
+                    newArr2[j] = arr2[i];
+                    j++;
+                }
+            }
+            return newArr2;
+        }
+        console.log(chose2([10, 20, 5, 4, 22, 1, 6]));
+    </script>
+</body>
+
+</html>

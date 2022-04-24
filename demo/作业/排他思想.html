@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>排他思想</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .box {
+            width: 960px;
+            height: 400px;
+            border: 1px solid red;
+            margin: 100px auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <button>按钮1</button>
+        <button>按钮2</button>
+        <button>按钮3</button>
+        <button>按钮4</button>
+    </div>
+    <script>
+        // 获取页面DOM节点
+        var btns = document.querySelectorAll('button');
+        for (var i = 0; i < btns.length; i++) {
+            btns[i].onclick = function() {
+                for (var i = 0; i < btns.length; i++) {
+                    btns[i].style.backgroundColor = '';
+                }
+                this.style.backgroundColor = 'pink';
+            }
+        }
+    </script>
+</body>
+
+</html>

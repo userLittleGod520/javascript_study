@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        div {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            font-size: 100px;
+            line-height: 200px;
+            color: white;
+            text-align: Center;
+        }
+        
+        span {
+            position: absolute;
+            margin-top: 300px;
+            display: block;
+            width: 200px;
+            height: 200px;
+            background-color: blue;
+            color: white;
+            font-size: 100px;
+            line-height: 200px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div>1</div>
+    <span>2</span>
+    <button>让2走</button>
+    <script>
+        // 缓动动画 为了让元素运动速度有所变化，让速度慢慢停下来
+        // 1、盒子每次移动的距离慢慢变下，速度慢下来  10px 到 9px
+        // 2、核心算法:( 目标值 - 现在的位置) / 10  做为每次移动距离的步长
+        // 3、停止的条件就是 让当前盒子位置 等于 目标位置就是 停止定时器
+        var div = document.querySelector('div');
+        var span = document.querySelector('span');
+        var btn = document.querySelector('button');
+
+        function move(obj, target) {
+            // 按钮每次点都会执行，所有要先清除定时器
+            clearInterval(obj.timer);
+            var timer = setInterval(function() {
+                // 步长值 写到定时器里面
+                var step = (target - obj.offsetLeft) / 10;
+                if (obj.offsetLeft == target) {
+                    // 清除定时器
+                    clearInterval(timer);
+                }
+                // 把每次加1 改成 慢慢变小的值  步长公式： (目标值 - 现在的位置)  / 10 
+                obj.style.left = obj.offsetLeft + step + 'px';
+            }, 15);
+        }
+        move(div, 200);
+
+        // 让2走
+        btn.addEventListener('click', function() {
+            move(span, 500);
+        })
+
+        // 匀速动画 就是 盒子当前的位置 + 固定的值 10
+        // 缓动动画就是 盒子当前的位置 + 变化的值                     变化值=( 目标值 - 现在的位置) / 10
+    </script>
+</body>
+
+</html>

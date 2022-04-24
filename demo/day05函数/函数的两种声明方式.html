@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 函数调用的两种方式
+        /*
+          1、利用函数关键字 自定义函数(命名函数 )
+            // function fn1(){
+
+            // }
+*/
+        function fn1() {
+            return 123;
+        }
+        console.log(fn1());
+        /*
+                  2、使用函数的表达式  (匿名函数   函数体没有名字)
+                     // var 变量名 = function(){};
+                     var fn2 = function(){
+                     console.log('我是函数表达式');
+                     };
+                     fn2();  fn2是变量名 不是函数名
+                            匿名函数跟声明变量一样， 只不过变量存储的值 是 函数表达式里面的值
+                */
+        var fun = function (str) {
+            console.log('我是匿名函数');
+            console.log(str);
+        }
+        fun('李神');   // 匿名函数调用方法跟  函数差不多  传参用法一样
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div></div>
+    <img src="" alt="">
+    <button class="btn">显示</button>
+    <script>
+        // 根据不同的时间显示不同的图片
+        // 1、获取页面DOM节点
+        var div = document.querySelector('div');
+        var img = document.querySelector('img');
+        var btn = document.querySelector('.btn');
+        // 2、获取时间
+        var date = new Date();
+        var year = date.getFullYear();
+        var month = date.getMonth() + 1;
+        var day = date.getDate();
+        var week = date.getDay();
+        var arr = ['星期一', '星期二', '星期三', '星期四', '星期五', '星期六', '星期天'];
+        var h = date.getHours();
+        var h = h < 10 ? '0' + h : h;
+        var m = date.getMinutes();
+        var m = m < 10 ? '0' + m : m;
+        var s = date.getSeconds();
+        var s = s < 10 ? '0' + s : s;
+        btn.onclick = function() {
+            if (h < 12) {
+                img.src = './image/1.gif';
+                div.innerText = '早上好!';
+            } else if (h < 14) {
+                img.src = './image/2.gif';
+                div.innerText = '中午好!';
+            } else {
+                img.src = './image/3.jpg';
+                div.innerText = '晚上好';
+            }
+            console.log('现在是:' + year + '年' + month + '月' + day + '号' + '星期' + arr[week] + h + '时' + m + '分' + s + '秒');
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // js执行机制
+        // 1、分清任务类型;
+        // 2、点击事件的异步需要执行才写进异步进程里面
+        // 3、等全部同步执行完毕，把异步放进主线程栈里面执行
+        // 主线程不断重复 获取任务、执行任务、再获取任务、再执行。这种机制被称为 事件循环
+        console.log(1);
+        document.onclick = function() {
+            console.log('click');
+        }
+        console.log(2);
+        setTimeout(function() {
+            console.log(3);
+        }, 3000)
+    </script>
+</body>
+
+</html>

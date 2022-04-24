@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // BOM 是浏览器对象模型 -> window 提供了独立于内容而与浏览器窗口进行交互的对象  核心是window
+        // BOM 由一系列的对象构成的，并且对象都提供了很多方法和属性
+        // BOM缺乏标准，js语法是ECMA, DOM标准是 W3C, BOM标准最初是Netscape浏览器标准的一部分
+
+        //BOM 浏览器对象模型
+        // 把浏览器当做一个对象来看待
+        // BOM的顶级对象是window对象
+        // BOM学习是浏览器窗口交互的对象
+        // BOM是浏览器厂商在浏览器上定义的，兼容性比较差
+        // BOM比DOM大，包含了DOM window.document.querySelector();
+
+        //window对象是js访问窗口的接口
+        // 是一个全局对象，定义在全局作用域中的变量，函数都会变成window对象的属性和方法
+        var num = 10; // 全局变量  变成window对象的属性 方法调用可以省略window  
+        console.log(num);
+        console.log(window.num);
+
+        function fn() {
+            console.log(11);
+        }
+        fn();
+        window.fn();
+        alert('123');
+        console.dir(window);
+        var name = 10; // 错误 不能定义关键字
+        console.log(window.name);
+    </script>
+</body>
+
+</html>

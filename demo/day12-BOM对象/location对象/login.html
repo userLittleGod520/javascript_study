@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="./index.html" method='get'>
+        <h1>登录页面</h1>
+        <label for="">用户名:
+            <input type="text" name ='username'>
+            <input type="submit" value="登录">
+        </label>
+    </form>
+
+    <script>
+        // 案例分析
+        // 1、第一个登录页面，里面有提交表单，action提交到index页面里面
+        // 2、第二个页面，可以使用第一个页面的表单参数，实现了数据不同页面之间的专递效果
+        // 3、第二个页面之所以可以使用第一页面的数据，利用了URL里面的location.search参数
+        // 4、第二个页面中 需要把参数提取
+        // 5、去掉多余的字符串 substr
+        // 6、利用分隔符 split('= ') 分割 键和值  username = red;
+    </script>
+</body>
+
+</html>

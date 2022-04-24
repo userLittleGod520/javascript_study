@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .box {
+            width: 960px;
+            /* border: 1px solid red; */
+            margin: 0 auto;
+        }
+        
+        table {
+            width: 500px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <table border="1">
+            <thead>
+                <th>姓名</th>
+                <th>年龄</th>
+                <th>班级</th>
+            </thead>
+            <tbody>
+
+            </tbody>
+        </table>
+    </div>
+    <script>
+        // 获取页面DOM节点
+        var thead = document.querySelector('thead');
+        var tbody = document.querySelector('tbody');
+        // 使用对象创建 数据
+        var obj = [{
+            name: '李神',
+            age: 19,
+            class: '18计算机6班'
+        }, {
+            name: '冯晓虎',
+            age: 20,
+            class: '18计算机6班'
+        }, {
+            name: '廖振林',
+            age: 19,
+            class: '18计算机6班'
+        }];
+        // 循环添加tr
+        for (var i = 0; i < obj.length; i++) {
+            var tr = document.createElement('tr');
+            tbody.appendChild(tr);
+            // 循环对象 添加td
+            for (var k in obj[i]) {
+                var td = document.createElement('td');
+                td.innerHTML = obj[i][k];
+                tr.appendChild(td);
+            }
+        }
+    </script>
+</body>
+
+</html>

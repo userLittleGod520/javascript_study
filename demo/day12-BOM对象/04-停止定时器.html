@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button>停止定时器</button>
+    <button class="begin">开启定时器</button>
+    <button class="stop">关闭定时器</button>
+    <script>
+        // 停止setTimeout() 定时器 window.cleanTimeOut(timeoutID);
+        // window可以省略
+        // 里面的参数就是定时器的标示符;
+        var btn = document.querySelector('button');
+        var timer2 = null //全局变量
+        var timer = setTimeout(function() {
+            console.log('爆炸了');
+        }, 5000);
+        btn.addEventListener('click', function() {
+            clearTimeout(timer);
+        });
+
+        // 清除定时器 cleanInterval()方法  取消了setInterval 建立的定时器
+        // window 可以省略
+        // 里面的参数就是定时器的标识符
+        // 定时器的名字一定要 设置 null 然后 存进空对象
+
+        var begin = document.querySelector('.begin');
+        var stop = document.querySelector('.stop');
+        begin.addEventListener('click', function() {
+            timer2 = setInterval(function() {
+                console.log('hahha');
+            }, 1000);
+        })
+        stop.addEventListener('click', function() {
+            clearInterval(timer2);
+        })
+    </script>
+</body>
+
+</html>

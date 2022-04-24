@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 返回数组元素索引号方法 indexOf('数组元素') 返回该数组的索引号  
+        // indexOf('数组元素',[查询的起始位置]);
+        // 只返回第一个满足条件的索引号 
+        // 没有元素 返回 -1
+        var arr = ['red', 'green', 'pink', ];
+        console.log(arr.indexOf('blue'));
+
+        // lastIndexOf() 从数组后面开始查找
+        // 从数组后面开始找 满足条件的一个索引号
+        // 不存在返回0 
+        var arr2 = ['小美', '小神', '小李', '小符', '小美'];
+        console.log(arr2.lastIndexOf('小美')); // 4
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="box">
+        <button>删除</button>
+        <ul>
+            <li>123</li>
+            <li>456</li>
+            <li>789</li>
+        </ul>
+    </div>
+    <script>
+        // 删除节点 node.removeChild(child); 删除父节点里面的小节点
+        // 1、获取节点
+        var ul = document.querySelector('ul');
+        var li = ul.getElementsByTagName('li');
+        var btn = document.querySelector('button');
+        // ul.removeChild(ul.children[0]);
+        // 2、删除元素 node.removeChild(child);
+        btn.onclick = function() {
+            if (ul.children.length == 0) {
+                this.disabled = true;
+            } else {
+                ul.removeChild(ul.children[0]);
+            }
+        }
+    </script>
+</body>
+
+</html>

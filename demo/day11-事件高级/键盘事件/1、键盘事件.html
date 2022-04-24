@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>键盘事件</title>
+</head>
+
+<body>
+    <script>
+        //键盘触发 先执行down 在执行press 然后弹起 up
+        // 1、键盘松开的时候触发 onkeyup
+        // document.onkeyup = function() {
+        //     console.log('我触发了');
+        // }
+        document.addEventListener('keyup', function() {
+            console.log('up');
+        });
+        // 2、键盘按下的时候触发 onkeydown
+        document.addEventListener('keydown', function() {
+            console.log('down');
+        });
+        // 3、键盘被按下时触发(不识别功能键,例如 Ctrl shift 左右箭头 onkeypress
+        document.addEventListener('keypress', function() {
+            console.log('press按下了');
+        });
+        // 4、如果使用addEventListener 不适用 on
+        // 5、三个事件执行顺序: keydown -> keypress  -> keyup
+    </script>
+</body>
+
+</html>

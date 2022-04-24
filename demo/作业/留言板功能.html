@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .box {
+            width: 960px;
+            margin: 0 auto;
+        }
+        
+        .content {
+            width: 960px;
+            border: 1px solid red;
+            margin: 0 auto;
+        }
+        
+        li {
+            list-style: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <textarea name="" id="" cols="30" rows="10"></textarea>
+        <input type="button" value="发布">
+        <button>删除</button>
+    </div>
+    <div class="content">
+        <ul></ul>
+    </div>
+    <script>
+        // 1、获取页面DOM节点
+        var text = document.querySelector('textarea');
+        var btn = document.querySelector('input');
+        var ul = document.querySelector('ul');
+        var btn2 = document.querySelector('button');
+        btn.onclick = function() {
+            function getTime() {
+                var date = new Date()
+                var year = date.getFullYear();
+                var month = date.getMonth();
+                var day = date.getDay();
+                var h = date.getHours();
+                var m = date.getMinutes();
+                var s = date.getSeconds();
+                var s = s < 10 ? '0' + s : s;
+                return '发布于' + year + '年' + month + '月' + day + '日' + h + '时' + m + '分' + s + '秒';
+            }
+            if (text.value == '') {
+                alert('你还不能发布！');
+            } else {
+                var li = document.createElement('li');
+                // ul.appendChild(li);
+                li.innerHTML = text.value + getTime();
+                // node.insertBefore(newItem, 要添加子节点的对象)
+                ul.insertBefore(li, ul.children[0]);
+
+                // 删除功能
+                btn2.onclick = function() {
+                    if (text.value.length == 0) {
+                        this.disable = true;
+                    } else {
+                        // 删除元素 node.removeChild(child);
+                        ul.removeChild(ul.children[0]);
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .father {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .son {
+            width: 100px;
+            height: 100px;
+            background-color: black;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="father">
+        <div class="son"></div>
+    </div>
+    <script>
+        // 事件冒泡:从下往上 逐级向上
+        var div1 = document.querySelector('.father');
+        var div2 = document.querySelector('.son');
+        div1.addEventListener('click', function() {
+            alert('father');
+        }, true);
+        div2.addEventListener('click', function() {
+            alert('son');
+        }, false);
+        document.addEventListener('click', function() {
+            alert('document');
+        }, true);
+    </script>
+</body>
+
+</html>

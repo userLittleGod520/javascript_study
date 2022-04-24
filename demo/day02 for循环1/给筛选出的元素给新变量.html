@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 把数组arr中 大于等于20 的数筛选出来 然后进行存储到 newArr中
+        var arr = [1, 21, 22, 40, 50, 5];
+        var num = '';
+        var newArr = [];
+        var j = 0;
+        for (var i = 0; i < arr.length; i++) {
+            if (arr[i] >= 20) {
+                // 新数组应该从0开始存。依次递增
+                newArr[j] = arr[i];
+                j++;
+            }
+        }
+        console.log(newArr);
+
+        // 方法二 通过数组索引号 去实现
+        var arr = [1, 21, 22, 40, 50, 5];
+        var num = '';
+        var newArr = [];
+        for (var i = 0; i < arr.length; i++) {
+            if (arr[i] >= 20) {
+                // 通过数组索引号。依次递增
+                newArr[newArr.length] = arr[i];
+            }
+        }
+        console.log(newArr);
+    </script>
+</body>
+
+</html>

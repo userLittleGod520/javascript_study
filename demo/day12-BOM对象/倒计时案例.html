@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        span {
+            position: relative;
+            display: block;
+            width: 50px;
+            height: 50px;
+            background-color: black;
+            float: left;
+            margin-left: 10px;
+            color: white;
+            font-size: 36px;
+            line-height: 50px;
+            text-align: center;
+        }
+        
+        span::before {
+            content: ':';
+            position: absolute;
+            top: 0;
+            right: -10px;
+            display: inline-block;
+            color: black;
+            font-size: 35px;
+        }
+        
+        span:last-child::before {
+            display: none;
+        }
+        
+        .box {
+            width: 960px;
+            height: 300px;
+            margin: 100px auto;
+            /* border: 1px solid red; */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <span class="hour"></span>
+        <span class="minute"></span>
+        <span class="sceond"></span>
+    </div>
+
+    <script>
+        var hour = document.querySelector('.hour');
+        var minute = document.querySelector('.minute');
+        var second = document.querySelector('.sceond');
+        // 设置定时器
+        setInterval(getTime, 1000);
+        // 获取时间
+        function getTime() {
+            // 获取用户输入的时间
+            var input_time = +new Date('2022-3-17 22:00:00');
+            var last_time = +new Date();
+            var times = (input_time - last_time) / 1000;
+            var h = parseInt(times / 60 / 60 % 24);
+            var h = h < 10 ? '0' + h : h;
+            hour.innerHTML = h;
+            var m = parseInt(times / 60 % 60);
+            var m = m < 10 ? '0' + m : m;
+            minute.innerHTML = m;
+            var s = parseInt(times % 60);
+            var s = s < 10 ? '0' + s : s;
+            second.innerHTML = s;
+        }
+        getTime();
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            position: relative;
+            /*子绝父相*/
+            width: 200px;
+            border-bottom: 1px solid red;
+            margin: 0 auto;
+        }
+        
+        .box input {
+            width: 150px;
+            border: 0;
+            outline: none;
+        }
+        
+        .box img {
+            position: absolute;
+            top: 6px;
+            right: 10px;
+            width: 24px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <input type="password" id='pwd'>
+        <label for=""><img id="eye" src="./image/show.jpg" alt=""></label>
+    </div>
+    <script>
+        // 修改密码  type属性
+        // 案例分析:
+        // (1)点击 按钮 把密码框类型修改 为文本框 可以看见里面密码
+        // (2)一个按钮两个状态，点击一次， 切换为 文本框 继续点击 返回密码框 
+        // (3)算法: 利用一个flag变量，判断flag的值，是1切换为文本框 flag设置为0 是0切换为密码框 flag设置为1
+        // 获取元素
+        var pwd = document.getElementById('pwd');
+        var img = document.getElementById('eye');
+        var flag = 0;
+        // 绑定事件 处理程序
+        img.onclick = function() {
+            // 点击一次
+            if (flag == 0) {
+                pwd.type = 'text';
+                flag = 1; // flag一直是0 修改值
+                eye.src = './image/show.jpg';
+            } else {
+                pwd.type = 'password';
+                flag = 0; // 重新赋值
+                eye.src = './image/close.jpg';
+            }
+        }
+    </script>
+</body>
+
+</html>

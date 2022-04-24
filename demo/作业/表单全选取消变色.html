@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>表单全选取消变色</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .box {
+            width: 960px;
+            height: 200px;
+            border: 1px solid red;
+            margin: 100px auto;
+        }
+        
+        table {
+            margin: 0 auto;
+            border: 1px solid red;
+            width: 400px;
+            text-align: center;
+        }
+        
+        thead {
+            background-color: pink;
+        }
+        
+        th {
+            border-bottom: 10px solid #eee;
+        }
+        
+        tr {
+            border-bottom: 1px solid gray;
+            border-right: 1px solid gray;
+        }
+        
+        td {
+            border-bottom: 1px solid gray;
+            border-right: 1px solid gray;
+            background-color: aqua;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <table>
+            <thead>
+                <tr>
+                    <th><input type="checkbox" class="all_check"></th>
+                    <th>商品</th>
+                    <th>价钱</th>
+                </tr>
+            </thead>
+            <tbody class="j_td">
+                <tr>
+                    <td><input type="checkbox"></td>
+                    <td>iphone 8</td>
+                    <td>8000</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox"></td>
+                    <td>iphone 8</td>
+                    <td>8000</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox"></td>
+                    <td>iphone 8</td>
+                    <td>8000</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox"></td>
+                    <td>iphone 8</td>
+                    <td>8000</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox"></td>
+                    <td>iphone 8</td>
+                    <td>8000</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <script>
+        var j_cbAll = document.querySelector('.all_check');
+        var j_tds = document.querySelector('.j_td').getElementsByTagName('input');
+        console.log(j_tds);
+        j_cbAll.onclick = function() {
+            for (var i = 0; i < j_tds.length; i++) {
+                j_tds[i].checked = this.checked;
+            }
+        }
+        for (var i = 0; i < j_tds.length; i++) {
+            j_tds[i].onclick = function() {
+                for (var i = 0; i < j_tds.length; i++) {
+                    var flag = true;
+                    if (!j_tds[i].checked) {
+                        flag = false;
+                    }
+                }
+                j_cbAll.checked = flag;
+            }
+        }
+    </script>
+</body>
+
+</html>

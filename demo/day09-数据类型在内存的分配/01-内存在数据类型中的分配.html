@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 学习目标：
+        // 简单数据类型的内存分配
+        // 复杂数据类型的内存分配
+        // 栈和堆
+        // 简单数据类型如何传参
+        // 复杂数据类型如何传参
+
+        // 回答: 
+        // (1)js分为 2大数据类型 简单和复杂 
+        // 其中简单数据类型为 基本数据类型 || 值类型 复杂数据类型为引用类型
+        // 简单数据类型 为5个(String(字符串型),Boolean(布尔型),Number(数字数),Undefined(),Null(特殊类型 指没有值或者空置，不代表任何东西))
+        var tempr = null;
+        console.log(typeof(tempr)); // 返回 空的对象 object
+        // 使用场景 变量存储为对象，没想到可以存储什么可以给里面对象放null
+
+
+        // (2) 复杂数据类型 在存储临时变量时仅仅是地址(十六进制码)(引用)，所有为引用数据类型
+        //  通过new 关键字创建的对象 如Object、Array、Date等
+
+        // (3)栈和堆(操作系统自动分配)
+        // 栈：由操作系统自动分配释放 存放(函数的参数值、局部变量的值等)。
+        // 操作方式类似于数据结构中的栈 简单数据类型放在栈里面
+
+        // 堆: 一般由程序员分配释放，若程序员不释放，有垃圾回收机制回收。
+        // 复杂数据类型存放到堆里面
+    </script>
+</body>
+
+</html>

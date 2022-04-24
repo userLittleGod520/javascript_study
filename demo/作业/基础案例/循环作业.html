@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //  循环作业总和
+        /*
+        1、求一个1-100之间所有数的总和与平均值:
+        var sum = 0;
+        var i = 1;
+        while (i <= 100) {
+            sum += i;
+            i++;
+        }
+        alert(sum);
+        2、求一个1-100之间偶数的和
+          var sum = 0;
+        for (var i = 1; i <= 100; i++) {
+            if (i % 2 == 0) {
+                sum += i;
+            }
+        }
+        console.log(sum);
+        3、求100以内7的倍数的总和
+         var num = 0;
+        for (var i = 1; i <= 100; i++) {
+            if (i % 7 == 0) {
+                num += i;
+            }
+        }
+        console.log(num);
+        4、使用for循环打印矩形，要求每一次只能输出一个星
+             var str = '';
+        for (var i = 1; i <= 4; i++) {
+            for (var j = 1; j <= 4; j++) {
+                str += '★';
+            }
+            str += '\n';
+        }
+        console.log(str);+
+        5、使用for循环一个三角形
+        正序
+               var num = '';
+        for (var i = 1; i <= 4; i++) {
+            for (var j = 1; j <= i; j++) {
+                num += '▲';
+            }
+            num += '\n';
+        }
+        console.log(num);
+    倒序
+            var num = '';
+        for (var i = 1; i <= 4; i++) {
+            for (var j = i; j <= 4; j++) {
+                num += '▲';
+            }
+            num += '\n';
+        }
+        console.log(num);
+
+        6、打印九九乘法表
+        1/        for (var i = 1; i <= 9; i++) {
+            for (var j = 1; j <= i; j++) {
+                document.write(j + 'x' + i + '=' + i * j + '     ');
+            }
+            document.write('<br>');
+        }
+        2/
+    var num = '';
+        for (var i = 1; i <= 9; i++) {
+            for (var j = 1; j <= i; j++) {
+                num += j + 'x' + i + '=' + i * j + '    ';
+            }
+            num += '\n';
+        }
+        console.log(num);
+         
+        7、判断用户登录 
+        if语句；
+           var name = prompt('请输入你的姓名');
+        var password = prompt('请输入你的密码');
+        if (name !== 'admin') {
+            alert('你的姓名有误');
+        } else if (password !== '123456') {
+            alert('你的密码有误');
+        } else {
+            alert('登录成功!');
+        }
+        switch语句:
+   var name = prompt('请输入你的姓名');
+        var password = prompt('请输入你的密码');
+        switch (name) {
+            case 'admin':
+                alert('登录成功');
+                break;
+            case '123456':
+                alert('登录成功');
+                break;
+            default:
+                prompt('请输入你的姓名');
+                prompt('请输入你的密码');
+        }
+        while 循环
+                var uname = prompt('请输入你的姓名');
+        var password = prompt('请输入的密码');
+        while (uname !== 'admin' && password !== '123456') {
+            uname = prompt('请输入你的姓名');
+            password = prompt('请输入的密码');
+        }
+        console.log('登录成功');
+        do while循环:
+            do {
+            var uname = prompt('请输入你的姓名');
+            var password = prompt('请输入的密码');
+        } while (uname !== 'admin' && password !== '123456');
+        alert('登录成功!');
+        
+        8、求1-100之间的和，除了3的倍数
+          var sum = 0;
+        for (var i = 1; i <= 100; i++) {
+            if (i % 3 == 0) {
+                continue;
+            }
+            sum += i;
+        }
+        alert(sum); // 3367
+        */
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 作用域链
+
+        // 案例1
+        function fn1() { //外部函数   1级链
+            var num = 123; // 二级链
+
+            function fn2() { // 内部函数
+                console.log(num);
+            }
+            fn2(); // return 123
+        }
+        var num = 456; // 1级链
+        fn1();
+        // 答案: 123  因为 24行的num 在一级链 比 17行 二级链远  所以 输出 123
+    </script>
+</body>
+
+</html>

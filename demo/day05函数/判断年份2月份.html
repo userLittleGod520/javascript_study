@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 判断闰年
+        // 函数互相调用
+        function isRunYear(year) {
+            var flag = false;
+            if (year % 4 == 0 && year % 100 != 0 || year % 400 == 0) {
+                flag = true;
+            }
+            return flag;
+        }
+        console.log(isRunYear(2000));
+        console.log(isRunYear(2021));
+
+        // 判断一年中2月有几天
+        function backDate() {
+            var year = prompt('请输入判断的年份?');
+            if (isRunYear(year)) {
+                console.log(year + '  ' + '2月份有29天'); // 结果为 TRUE 返回
+            } else {
+                console.log(year + '2月份有28天');
+            }
+        }
+        backDate();
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .con {
+            /* display: none; */
+        }
+        
+        .search {
+            width: 960px;
+            margin: 20px auto;
+        }
+        
+        .con {
+            display: none;
+            width: 300px;
+            height: 40px;
+            background-color: white;
+            margin-bottom: 20px;
+            box-shadow: 2px 2px 2px black;
+            text-align: center;
+            font-size: 24px;
+            position: relative;
+        }
+        
+        .con::before {
+            content: '';
+            position: absolute;
+            top: 40px;
+            left: 35px;
+            width: 0px;
+            height: 0px;
+            border: 10px solid red;
+            border-color: white transparent transparent transparent;
+        }
+        
+        .jd {
+            width: 300px;
+            height: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="search">
+        <div class="con">123</div>
+        <input type="text" placeholder="请输入你的快递单号" class="jd">
+    </div>
+
+    <script>
+        // 京东快递查询案例
+        // 案例分析
+        // 1、快递单号输入内容时，上面盒子大号显示
+        // 2、表单检测用户输入，给表单添加键盘事件
+        // 3.同时把快递单号里面的值(value) 获取过来赋值个 盒子(innerHTML)的内容
+        // 4、快递单号的字体为空隐藏盒子
+        // keydown 和 keypress在文本框的特点就是两个事件触发的时候 文字还没有落入文本框里面
+        // keyup触发的时候,文字已经落入文本框里面
+        // 失去焦点隐藏盒子
+        // 获得焦点显示盒子
+        var content = document.querySelector('.con');
+        var text = document.querySelector('.jd');
+        text.addEventListener('keyup', function() { // keydown 会少一个字符
+            // console.log('输入内容了');
+            if (text.value == '') {
+                content.style.display = 'none';
+            } else {
+                content.style.display = 'block';
+                content.innerHTML = this.value;
+            }
+        });
+        // 当我们失去焦点 隐藏盒子
+        text.addEventListener('blur', function() {
+            content.style.display = 'none';
+        });
+
+        // 当我们获得焦点 显示盒子
+        text.addEventListener('focus', function() {
+            content.style.display = 'block';
+        })
+    </script>
+</body>
+
+</html>

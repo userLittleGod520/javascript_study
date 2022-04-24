@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 双重for循环嵌套   里面的循环是外层循环的语句
+        // 外层循环一次，里面的循环执行全部
+        //    语法
+        // for (初始化变量; 条件表达; 操作表达式) {
+        //     for (初始化变量; 条件表达; 操作表达式) {
+        //         执行语句
+        //     }
+        // }
+        /* 
+        for (var i = 1; i <= 3; i++) {
+            console.log('这是第' + i + '次');
+            for (var j = 1; j <= 3; j++) {
+                console.log('这是第' + j + '次');
+            }
+        }
+        
+        // 使用双重for循环输出10行10列小星星  算法 i<=10;j<=10; /n换行
+        var row = prompt('请输入打印星星的行数');
+        var cols = prompt('请输入打印星星的列数');
+        var str = '';
+        for (var i = 1; i <= row; i++) {
+            for (var j = 1; j <= cols; j++) {
+                str += '★';
+            }
+            str += '\n';
+        }
+        console.log(str);
+
+      // 打印正三角         
+        1、for (var i = 1; i <= 9; i++) {
+            for (var j = 1; j <= i; j++) {
+                document.write('★');
+            }
+            document.write('<br>');
+        }
+    2、 var str = '';
+        for (var i = 1; i <= 9; i++) {
+            for (var j = 1; j <= i; j++) {
+                str += '★';
+            }
+            str += '\n';
+        }
+        console.log(str);
+
+        // 使用for循环嵌套制作乘法口诀
+        1、for (var i = 1; i <= 9; i++) {
+            for (var j = 1; j <= i; j++) {
+                document.write(j + 'x' + i + '=' + i * j + '         ');
+            }
+            document.write('<br>');
+        }
+        2、
+               var str = '';
+        for (var i = 1; i <= 9; i++) {
+            for (var j = 1; j <= i; j++) {
+                str += j + 'x' + i + '=' + i * j + '  '
+            }
+            str += '\n';
+        }
+        console.log(str);
+        */
+    </script>
+
+</body>
+
+</html>
+
+</html>

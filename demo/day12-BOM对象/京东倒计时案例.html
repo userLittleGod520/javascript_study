@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .box {
+            width: 960px;
+            height: 300px;
+            margin: 100px auto;
+        }
+        
+        span {
+            position: relative;
+            display: inline-block;
+            color: white;
+            font-size: 35px;
+            text-align: center;
+            line-height: 50px;
+            margin-left: 20px;
+        }
+        
+        .hour {
+            width: 50px;
+            height: 50px;
+            background-color: black;
+        }
+        
+        .minute {
+            width: 50px;
+            height: 50px;
+            background-color: black;
+        }
+        
+        .second {
+            width: 50px;
+            height: 50px;
+            background-color: black;
+        }
+        
+        span::before {
+            content: ':';
+            position: absolute;
+            top: 0;
+            right: -15px;
+            display: block;
+            color: black;
+        }
+        
+        span:last-child::before {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <span class="hour"></span>
+        <span class="minute">
+        </span>
+        <span class="second">
+        </span>
+    </div>
+    <script>
+        // 1、倒计时是不断变化的，因此需要定时器来自动变化(setInterval);
+        // 2、三个黑子盒子分别存放时分秒
+        // 3、三个盒子利用innerHTML放入计算的小时分钟秒数
+
+        // 获取元素
+        var hour = document.querySelector('.hour');
+        var minute = document.querySelector('.minute');
+        var second = document.querySelector('.second');
+        var input_time = new Date('2022-3-20 20:00:00');
+        // 以前的时间戳 - 现在的时间戳
+        // 设置定时器
+        setInterval(getTime, 1000);
+
+        function getTime(time) {
+            var date = new Date();
+            var last_time = +new Date();
+            // console.log(last_time);
+
+            // 获得 剩余的时间戳
+            var times = (input_time - last_time) / 1000;
+            // console.log(times);
+            // 拿到总秒数 获得时间
+            // console.log(day); // 获得日期
+            var h = parseInt(times / 60 / 60 % 24); //剩余多少时
+            var h = h < 10 ? '0' + h : h;
+            hour.innerHTML = h; // 把剩余的小时 给小时黑色
+            var m = parseInt(times / 60 % 60); //剩余多少分
+            var m = m < 10 ? '0' + m : m;
+            minute.innerHTML = m;
+            var s = parseInt(times % 60); //剩余多少秒
+            var s = s < 10 ? '0' + s : s;
+            second.innerHTML = s;
+        }
+    </script>
+</body>
+
+</html>

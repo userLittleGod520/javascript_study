@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 根据位置 返回字符
+        // 1、charAt() 根据位置返回字符
+        var str = 'andy';
+        console.log(str.charAt(3)); // y
+
+        // 遍历全部字符
+        for (var i = 0; i < str.length; i++) {
+            console.log(str.charAt(i));
+        }
+
+        // 2、charCodeAt(index)  返回指定位置的ASCll码 (index索引号) 目的：判断用户按下了那个键
+        console.log(str.charCodeAt(0)); // 97 小写a
+
+        // 3、str[index] 获取指定位置处的字符   H5 新增的 
+        console.log(str[0]); // a
+
+
+        // 案例 
+        // 有个对象 来判断是否有 该属性 对象['属性名']
+        var o = {
+            age: 18,
+        }
+        if (o['age']) {
+            console.log('有该属性');
+        } else {
+            console.log('没有该属性');
+        }
+
+        // 判断字符串'abcoefoxyozzopp' 中出现次数最多的字符，并统计其次数
+        //核心算法： 利用 charAt() 遍历这个字符串 
+        //把每个字符都存储给对象，如果对象没有该属性就为 1， 存在为 +1 
+        // o.a = 1;
+        // o.b = 1;
+        // o.c = 1;
+        // o.o = 4;
+        //遍历对象，得到最大值
+        var str = 'abcoefoxyozzopp';
+        var o = {};
+        for (var i = 0; i < str.length; i++) {
+            var chars = str.charAt(i); // 保存字符串 里面的每一个数
+            if (o[chars]) {
+                o[chars]++;
+            } else {
+                o[chars] = 1;
+            }
+        }
+        console.log(o);
+        // 遍历 对象 for……in
+        var max = 0;
+        var char2 = '';
+        for (var k in o) {
+            // k得到属性值
+            // o[k] 得到的是属性值
+            if (o[k] > max) {
+                max = o[k];
+                char2 = k; // 属性名赋值给的char2
+            }
+        }
+        console.log(max);
+        console.log('最多的字符串是:' + char2 + '一共出现了' + max + '次')
+    </script>
+</body>
+
+</html>

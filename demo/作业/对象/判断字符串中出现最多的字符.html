@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 判断字符串中的最多字符
+        var str = 'dadsadavgaddas';
+        var obj = {}; // 创建一个空对象 用于接收循环完毕的字符
+        for (var i = 0; i < str.length; i++) {
+            // 保存循环结束的 字符
+            var chars = str.charAt(i);
+            if (obj[chars]) {
+                obj[chars]++
+            } else {
+                obj[chars] = 1;
+            }
+        }
+        console.log(obj); // 得到循环完毕的值
+        var max = 0;
+        var max_str = '';
+        for (var k in obj) {
+            // k 得到属性
+            // obj[k] 得到属性值
+            if (obj[k] > max) {
+                max = obj[k];
+                max_str = k;
+            }
+        }
+        console.log('在' + str + '中出现最多的字符是:' + max_str + '一共出现了' + max + '次');
+    </script>
+</body>
+
+</html>

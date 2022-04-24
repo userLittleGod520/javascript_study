@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button>点击</button>
+    <script>
+        // location 对象常用方法
+        // 1、location.assign();  跟href一样，可以跳转页面 记录浏览器历史，可以后退
+        // 2、location.replace(); 替换当前页面 
+        // 3、location.reload();  重新加载页面、相当于f5  如果参数为true 强制刷新 ctrl + F5
+
+        var btn = document.querySelector('button');
+        btn.addEventListener('click', function() {
+            // location.assign('http://www.baidu.com');
+            location.replace('http://www.baidu.com');
+            location.reload(true); // 清除缓存
+        })
+    </script>
+</body>
+
+</html>

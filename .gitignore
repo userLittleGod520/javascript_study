@@ -1,0 +1,10 @@
+# 忽略.pytest_cache 文件夹
+*.pytest_cache
+# 忽略.vscode文件夹
+*.vscode
+# 忽略_vscode文件夹
+*_vscode
+# 忽略.image文件夹
+*image
+# 忽略YouTube 文件夹
+*YouTube

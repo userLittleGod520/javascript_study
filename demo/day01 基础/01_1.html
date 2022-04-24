@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>加油</title>
+</head>
+
+<body>
+    <!--  1、行内js -->
+    <!-- <input type="button" value="2020东京奥运会" onclick="alert('中国队，加油!')"> -->
+
+    <!-- 2、内嵌式js -->
+    <script>
+        // 计算机只认识机器语言,由浏览器js引擎
+        //   我是高级语言，逐行解释。 逐行解释 = 脚本语言
+        //     alert('JavaScript是执行在客户端的脚本语言!');
+
+
+        // 常用输入输出框 1、alert 2、console.log() 3、prompt(输入框)
+        /* 这是输入框 prompt('请输入你的籍贯');   
+              alert('white') 展示给用户看到的
+         控制台  console.log('我是程序员可以看见的');  给程序员看到的
+        */
+
+        //  案例1:用户输入并输出结果  收集用户数据 d
+        /* var myname = prompt('请输入你的名字');
+        document.write(myname); */
+
+
+        // 变量是内存的 关键词 var局部变量 let全局变量 
+        /* let age = 19;
+         var name = '李神'; 变量初始化(声明变量并赋值)
+         alert(name);
+         // alert(i);
+
+
+        //  变量的扩展 1、变量的扩展性 2、声明多个变量 3、定义变量不赋值输出 
+        // 1、
+        // var newName = 1;
+        // console.log(newName);
+        // var newName = 2;
+        // console.log(newName);
+        // 2、 声明多个变量
+        // var age, name, school;
+        // age = 19;
+        // console.log(age);
+        // name = '李神';
+        // console.log(name);
+        // school = '高新';
+        // console.log(school);
+        // 3、定义不赋值变量，未定义变量，直接赋值
+        // var waring;
+        // console.log(waring); //返回undefined
+        //  console.log(qq); //未定义变量 逐行解释
+        // console.log(110); //返回110
+
+        // 变量的命名规范
+        /*
+           1、不能以(数字，下划线为开头)字母，美元符号 如: user_Name01,$Uid,$u_name等....
+           2、变量名严格区分大小写 var app和var App是定义两个变量；不是相同的
+           3、不能是关键词、保留字。如var for while do if else function等等
+           4、变量名必须有意义。如MMD,BBD Date(日期)，User_name,U_id,等等
+           5、大驼峰式U_id 和小驼峰式u_ID;    中间不能有空格
+           6、不要用name去定义变量，有的浏览器会采用也不报错
+         var app = 'true';
+        console.log(App);
+        var App = 'false';
+        console.log(app);
+    
+        // 逻辑性 左右手互换 定义临时变量temp 
+        var temp;
+        var apple1 = '青苹果';
+        var apple2 = '红苹果';
+        temp = apple1; // 把右边给左边
+        apple1 = apple2;
+        apple2 = temp;
+        console.log(apple1);
+        console.log(apple2);
+     */
+    </script>
+    <!--
+    3、外部连接js 
+    <script src="../public.js"></script> 
+     -->
+</body>
+
+</html>

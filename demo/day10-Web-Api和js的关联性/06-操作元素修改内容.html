@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p {
+            font-size: 24px;
+            font-family: '华文中宋';
+            color: red;
+        }
+        
+        div {}
+    </style>
+</head>
+
+<body>
+    <p>123</p>
+    <div>显示时间</div>
+    <p>good</p>
+    <script>
+        //  获取元素 修改内容'
+
+        // (1) Element.innerText (起始位置到终止位置 去除HTML标签 空格和换行一样去掉)
+        // (2) Element.innerHtml (起始位置到终止位置 全部内容 包括HTML标签 保留空格和换行)
+        var p = document.querySelector('p');
+        var div = document.querySelector('div');
+        p.onclick = function() {
+            div.innerText = getTime();
+        }
+
+        function getTime() {
+            var date = new Date();
+            var year = date.getFullYear();
+            var month = date.getMonth() + 1;
+            var day = date.getDate();
+            var week = date.getDay(); // 返回2 用数组保存起来 调用
+            var arr = ['星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六'];
+            var hours = date.getHours();
+            var minutes = date.getMinutes();
+            var second = date.getSeconds();
+            // 拼接时间
+            return '今天是:' + year + '年' + month + '月' + day + '日' + arr[week] + '  ' + hours + '点' + ':' + minutes + '分' + second + '秒';
+        }
+
+
+        // 我们元素 不用添加事件
+        var pEle = document.querySelectorAll('p');
+        pEle[1].innerText = getTime();
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: Red;
+        }
+        
+        .son {
+            width: 100px;
+            height: 100px;
+            background-color: green;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="father">
+        <div class="son"></div>
+    </div>
+    <script>
+        // mouseenter 鼠标经过事件 触发当前元素(不会冒泡) 就会触发mouseenter 事件  
+        // mouseover 会冒泡到子元素里面
+        // 跟mouseenter 搭配使用 mouseleave 鼠标离开 同样不会冒泡 
+        var father = document.querySelector('.father');
+        var son = document.querySelector('.son');
+        father.addEventListener('mouseover', function() {
+            console.log(123);
+        })
+    </script>
+</body>
+
+</html>

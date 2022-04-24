@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>检测是否为数组</title>
+</head>
+
+<body>
+    <script>
+        // 检测是否为 数组
+        function reverse(arr) {
+            // if (arr instanceof Array) {
+            if (Array.isArray(arr)) {
+                var newArr = []; // 创建空数组存储
+                for (var i = arr.length - 1; i >= 0; i--) {
+                    newArr[newArr.length] = arr[i];
+                }
+                return newArr;
+            } else {
+                return ' error 这个参数合适必须是数组';
+            }
+        }
+
+        console.log(reverse([1, 2, 3])); // 321
+        console.log(reverse(1, 2, 3)); // 空数组
+
+        // 检测是否为 数组 Array.isArray 优先于 instanceof
+        // (1) instanceof 运算符 用来检测是否为 数组  true == array  false != array
+        var arr2 = [];
+        console.log(arr2 instanceof Array); // true
+
+
+        // (2)Array.isArray(参数);  H5  新增方法 ie9+ 
+        console.log(Array.isArray([1, 2, 3])); // true
+        console.log(Array.isArray(1, 2, 3)); // false
+    </script>
+</body>
+
+</html>

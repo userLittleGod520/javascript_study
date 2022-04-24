@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="button" value="问候" name="ok" id="btn" onclick="">
+    <a href="http://www.baidu.com" id="link">百度</a>
+
+    <script>
+        // 函数和事件
+        function hello() {
+            alert('你好');
+            document.write('JavaScript的世界1');
+        }
+        btn.onclick = hello;
+        link.onclick = function() {
+                var sel = confirm('真的要跳转吗?')
+                if (!sel) {
+                    return false;
+                }
+            }
+            // 事件 与浏览器
+            /*
+              事件是由浏览器产生的， 不同的浏览器会产生不同的事件，同一事件在不同的浏览器也有
+              不一样的效果，
+              加载事件 和卸载 事件
+                onload="" and onbeforeunload=""
+
+        // 函数：就是封装了一段可被重复调用执行的代码块 
+             目的:代码块可以实现 大量代码 重复使用
+         
+            */
+
+
+        // 求出1-100 的累积和
+
+        var sum = 0;
+        for (var i = 1; i <= 100; i++) {
+            sum += i;
+        }
+        console.log(sum);
+
+        var sum2 = 0;
+        for (var i = 1; i <= 50; i++) {
+            sum2 += i;
+        }
+        console.log(sum2);
+
+        // 函数求和
+        function getSum(num1, num2) {
+            var sum2 = 0;
+            for (var i = num1; i <= num2; i++) {
+                sum2 += i;
+            }
+            console.log(sum2);
+        }
+        getSum(1, 100);
+
+        // question 
+        /*
+           1、函数是做什么的?
+           答: 函数就是 将一段重复使用的代码块进行封装,使用的时候调用
+           2、声明函数用什么关键词?
+           答: function(){}
+           3、如何调用函数?
+           答:  函数名+()
+           4、封装是什么意思?
+           答: 封装就是将  重复冗杂的代码块进行打包  拿函数封装起来
+        */
+    </script>
+</body>
+
+</html>

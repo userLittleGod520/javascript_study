@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 遍历对象
+        var obj = {
+            name: '李神',
+            age: 19,
+            sex: '男',
+            fn: function() {
+
+            }
+        }
+
+        // console.log(obe.name); // 对象没有下标无法 进行 简单的for循环需要进行 for in 用于对象遍历
+        // for in 遍历对象
+        // for (变量 in 对象){
+
+        // }
+
+        for (var k in obj) {
+            console.log(k); // k 变量 输出 得到的是 属性名
+            console.log(obj[k]); // obj[k] == 属性值
+        }
+
+        // 使用 for in 里面的变量 使用 k || key
+    </script>
+</body>
+
+</html>

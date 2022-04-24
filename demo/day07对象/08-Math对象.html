@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // Math对象不是一个构造函数，不需要new 调用。拿出来直接使用属性和方法即可
+        console.log(Math.PI); // Math属性
+        console.log(Math.max(1, 50, 132, 15, 'hello')); // Math 取最大值方法 NaN  Not a Number 
+        console.log(Math.max()); // 空 返回 -infinity
+
+
+        // 案例 利用对象封装自己的数学对象 里面有 PI、最大值 和最小值
+        var obj = {
+            Pai: Math.PI,
+            max: Math.max(1.20, 5, 50),
+            min: Math.min(1, 2, 5, 50),
+        }
+        console.log(obj.max); // 返回最大值 50
+        console.log(obj.min); // 返回最小值 1
+
+        var myMath = {
+            pi: 3.141592653,
+            max: function() {
+                var max = arguments[0];
+                for (var i = 1; i < arguments.length; i++) {
+                    if (arguments[i] > max) {
+                        max = arguments[i]
+                    }
+                }
+                return max;
+            },
+            min: function() {
+                var min = arguments[0];
+                for (var i = 1; i < arguments.length; i++) {
+                    if (arguments[i] < min) {
+                        min = arguments[i]
+                    }
+                }
+                return min;
+            }
+        }
+        console.log(myMath.pi); // 返回 PI
+        console.log(myMath.max(1, 20, 50, 88, 1000)); // 返回 最大值 1000
+        console.log(myMath.min(1, 20, 50, 88, 1000)); // 返回 最小值 1
+
+
+        // Math .round()取整数 -> 四舍五入 .abs() 取绝对值 .floor() 向下取整 .ceil(想上取整) max/min
+
+        // abs 绝对值
+        console.log(Math.abs(1)); // 返回 1
+        console.log(Math.abs(-1)); // 返回 1
+        console.log(Math.abs('-1')); // 隐式转换 1  
+
+        // 取整方法
+        console.log(Math.floor(1.252)); // 返回 1
+        console.log(Math.ceil(1.252)); //  返回 2  ceil 天花板
+        console.log(Math.round(3.1415926)) // 返回 3 四舍五入 但是 .5 特殊 往大的数取值 
+        console.log(Math.round(-1)); // 返回 -1
+        console.log(Math.round(-1.5)) // 返回 -1 看 谁大 -1 比 -2 大
+
+        // 随机数 Math.random()  返回一个随机的小数     0 =< x >1  x大于等于0但不大于1 [0,1)
+        console.log(Math.random());
+        // 得到两个数之间的整数 并且包括他本身
+        // Math.floor(Math.random() * (max - min + 1)) + min;
+
+        function getRandom(min, max) {
+            min = Math.ceil(min);
+            max = Math.floor(max);
+            return Math.floor(Math.random() * (max - min + 1)) + min; //含最大值，含最小值 
+        }
+        console.log(getRandom(1, 10)); // 1-10
+
+        // 随机点名
+        var arr = ['李神', '廖振林', '王玄', '冯晓虎', '贺基文'];
+        console.log(arr[getRandom(0, 4)]);
+    </script>
+</body>
+
+</html>

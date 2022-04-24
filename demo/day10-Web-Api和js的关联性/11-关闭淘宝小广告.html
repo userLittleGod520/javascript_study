@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            position: relative;
+            width: 240px;
+            height: 240px;
+            border: 1px solid red;
+            margin: 0 auto;
+        }
+        
+        .box img {
+            width: 200px;
+            padding-left: 20px;
+        }
+        
+        .box span {
+            font-size: 24px;
+            display: block;
+            text-align: center;
+        }
+        
+        .box #close-btn {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 20px;
+            font-size: 20px;
+            border: 1px solid gray;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box" class='box'>
+        <span>打开淘宝</span>
+        <img id="img" src="./image/ADV.png" alt="">
+        <span id="close-btn">X</span>
+    </div>
+
+    <script>
+        // 1、获取页面DOM节点
+        var box = document.querySelector('.box');
+        var img = document.querySelector('img');
+        var btn = document.querySelector('#close-btn');
+        console.log(btn);
+        btn.onclick = function() {
+            img.style = 'display:none';
+            this.style = 'display:none';
+            box.style = 'display:none';
+        }
+    </script>
+</body>
+
+</html>

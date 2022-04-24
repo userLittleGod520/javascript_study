@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .box {
+            width: 960px;
+            margin: 50px auto;
+            border: 1px solid red;
+        }
+        
+        .content {
+            width: 960px;
+            height: 200px;
+            border: 1px solid red;
+            margin: 0px auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <textarea name="" id="words" cols="30" rows="10">
+        </textarea>
+        <button>发布内容</button>
+        <input type="button" value='删除评论'>
+    </div>
+    <div class="content">
+        <ul>
+            <li>123</li>
+        </ul>
+    </div>
+    <script>
+        // 留言板功能
+        // 案例分析:
+        // 点击按钮 动态创建li 添加到ul里面 判断用户输入是否有值
+        // 创建li的同时，将文本域里面的内容通过innerHTML赋值给li
+        // 想要新的留言在 后面就用appendChild 前面就用 insertBefore
+
+        var text = document.querySelector('textarea');
+        var btn = document.querySelector('button');
+        var ul = document.querySelector('ul');
+        var del = document.querySelector('input');
+        btn.onclick = function() {
+            function getTime() {
+                var date = new Date();
+                var y = date.getFullYear();
+                var month = date.getMonth() + 1;
+                var day = date.getDate();
+                var arr = ['星期天', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六'];
+                var r = date.getDay();
+                var h = date.getHours();
+                var h = h < 10 ? '0' + h : h;
+                var m = date.getMinutes();
+                var m = m < 10 ? '0' + m : m;
+                var s = date.getSeconds();
+                var s = s < 10 ? '0' + s : s;
+                return '发布于' + y + '年' + month + '月' + day + '天' + arr[r] + h + '时' + m + '分' + s + '秒';
+            }
+            if (text.value == '') {
+                alert('你还不能发布！');
+            } else {
+                var li = document.createElement('li');
+                li.innerHTML = text.value + getTime();
+                // ul.appendChild(li);
+                ul.insertBefore(li, ul.children[0]);
+            }
+        }
+    </script>
+</body>
+
+</html>

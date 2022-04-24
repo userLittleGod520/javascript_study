@@ -1,0 +1,24 @@
+<head>
+<script type="text/javascript">
+var ele=[];
+for(var i=0;i<10;i++)
+{
+	ele[i]=Math.round(Math.random()*100);
+	document.write(ele[i]+" ");
+	}
+var e_max=ele[1];
+var e_min=ele[1];
+for(var i=0;i<10;i++)
+{
+	if(ele[i]>e_max)
+	{
+		e_max=ele[i];
+	}
+	if(ele[i]<e_min)
+	{
+		e_min=ele[i];
+	}
+}
+document.write("<br/>最大值: "+e_max+"<br/>最小值: "+e_min);
+</script>
+</head>

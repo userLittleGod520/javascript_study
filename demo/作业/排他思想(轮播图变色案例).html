@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>排他思想</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        ul {
+            list-style-type: none;
+        }
+        
+        #main {
+            width: 900px;
+            height: 316px;
+            border: 1px solid red;
+            position: relative;
+            margin: 20px auto;
+        }
+        
+        #one {
+            width: 150px;
+            height: 35px;
+            position: absolute;
+            right: 5px;
+            bottom: 5px;
+            z-index: 100;
+        }
+        
+        #one li {
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            border: 1px solid white;
+            float: left;
+            margin-left: 6px;
+            background: orange;
+        }
+        
+        #two {
+            position: absolute;
+        }
+        
+        #two li {
+            width: 900px;
+            height: 336px;
+            border: none;
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="main">
+        <ul id="one">
+            <li style="background:red;"></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+        <ul id="two">
+            <li style="display:block;"><img src="./image/1.jpeg" alt=""></li>
+            <li><img src="./image/2.jpeg" alt=""></li>
+            <li><img src="./image/3.jpeg" alt=""></li>
+            <li><img src="./image/4.jpeg" alt=""></li>
+        </ul>
+    </div>
+    <script>
+        // 1、 获取页面DOM 节点
+        var one = document.getElementById('one');
+        var two = document.getElementById('two');
+        var oneList = one.getElementsByTagName('li');
+        var twoList = two.getElementsByTagName('li');
+        var num = 0;
+        for (var i = 0; i < oneList.length; i++) {
+            oneList[i].num = i;
+            oneList[i].onmouseover = function() {
+                num = this.num;
+                // 移除事件
+                for (var j = 0; j < oneList.length; j++) {
+                    oneList[j].style.backgroundColor = 'orange';
+                }
+                this.style.backgroundColor = 'red';
+                for (var k = 0; k < oneList.length; k++) {
+                    if (k == num) {
+                        twoList[num].style.display = 'block';
+                    } else {
+                        twoList[k].style.display = 'none';
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

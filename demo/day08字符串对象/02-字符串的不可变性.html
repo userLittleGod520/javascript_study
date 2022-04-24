@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 1、字符串的不可变性
+        // 指的是 值虽然改变了 但是 原先定义的变量 在 内存中 创建了空间 只是把 地址改变了 
+        //   然后再新的内存开辟了新内存 并不会 影响到原先变量
+        var str = 'Andy!';
+        str = 'red';
+        console.log(str); // return red, 但是字符串其实没有改变 不要大量进行重新赋值 和 拼接
+        // 因为字符串的不可变 所以 不要大量的 拼接字符串
+
+        var str = '';
+        for (var i = 0; i < 100000; i++) {
+            str += i;
+        }
+        console.log(str);
+    </script>
+</body>
+
+</html>

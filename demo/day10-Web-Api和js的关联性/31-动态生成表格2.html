@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 960px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <table border="1">
+            <thead>
+                <th>姓名</th>
+                <th>班级</th>
+                <th>学号</th>
+                <th>操作</th>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+    <script>
+        var student = [{
+            name: '李神',
+            class: '18计算机6班',
+            xuehao: '20180656',
+        }, {
+            name: '冯晓虎',
+            class: '18计算机6班',
+            xuehao: '20180657',
+        }, {
+            name: '廖振林',
+            class: '18计算机6班',
+            xuehao: '20180658',
+        }, ]
+        var tbody = document.querySelector('tbody');
+        var thead = document.querySelector('thead');
+        for (var i = 0; i < student.length; i++) {
+            var tr = document.createElement('tr');
+            tbody.appendChild(tr);
+            for (var k in student[i]) {
+                var td = document.createElement('td');
+                td.innerHTML = student[i][k];
+                tr.appendChild(td);
+                tr.appendChild(td);
+            }
+            // 创建 删除单元格
+            var td = document.createElement('td');
+            td.innerHTML = '<a href="javascript">删除<a>';
+            tr.appendChild(td);
+        }
+
+        // for (var k in obj) {
+        //     // k得到的是 属性名
+        //     obj[k]; // 得到属性值
+        // }
+    </script>
+</body>
+
+</html>

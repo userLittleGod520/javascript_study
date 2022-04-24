@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>跟随鼠标的天使</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        img {
+            position: absolute;
+        }
+    </style>
+</head>
+
+<body>
+    <img src="../image/2.gif" alt="">
+    <script>
+        // 鼠标天使案例
+        // 1、鼠标不断的移动，使用鼠标移动事件:mousemove
+        // 2、在页面中移动,给document注册事件
+        // 3、图片移动距离，而且不占位置，绝对定位
+        // 4、核心原理:每次鼠标移动，我们都会获得最新的鼠标坐标，把X坐标和Y坐标作为图片的top值和left值移动图片
+        var img = document.querySelector('img');
+        document.addEventListener('mousemove', function(e) {
+            // 1、mousemove只要鼠标移动1px 就会触发这个事件
+            // console.log(1);
+            var x = e.pageX;
+            var y = e.pageY;
+            console.log('X坐标是' + x + 'Y坐标是:' + y);
+            img.style.left = x - 220 + 'px';
+            img.style.top = y - 300 + 'px';
+        })
+    </script>
+</body>
+
+</html>

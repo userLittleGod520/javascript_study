@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 简单数据类型传参 和  复杂数据类型传参
+        // (1)简单数据类传参
+        var num = 10;
+        num = 20;
+        console.log(num); // 20 直接修改了 临时变量在内存里面的值;
+
+        // 数据类型传参 区别
+        function fn(a) { // a == x  因为fn(x) 把x = 10带进去了;
+            a++;
+            console.log(a); // 11 因为fn函数调用了a a == 10 所以 a++ ==11;
+        }
+        var x = 10;
+        fn(x);
+        console.log(x); // 10 因为在函数里面值的地址没有发生改变 依然是 10 只是把x带进了 函数fn里面
+
+        // (2) 复杂数据类型传参
+        function Call(name) {
+            this.name = name;
+        }
+
+        function Call2(x) { // x == p
+            console.log(x); // 这个输出什么? // 火男
+            x.name = '天海';
+            console.log(x); // 这个输出什么? // 天海
+        }
+        var p = new Call('火男!');
+        console.log(p.name); // 这个输出什么? //  火男
+        Call2(p) // 把p传给call2里面
+        console.log(p.name); // 这个输出什么? // 天海 由于x.name的内存地址被修改了 所以p.name的值发生了变化
+    </script>
+</body>
+
+</html>

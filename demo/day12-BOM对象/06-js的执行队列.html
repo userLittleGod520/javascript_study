@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // js中执行队列 js是单线程语言:同一时间做一件事  允许创建多线程 
+        // 单线程意味着所有的任务要排队，等上个任务结束才能指向下一个
+        // 同步与异步 解决单线程 任务队列的问题  区别执行顺序不同
+        // 同步: 同步就是上一个任务结束才能执行下一个任务。烧水煮饭->等水开了(10分钟)->再去切菜、炒菜(不合理)
+        // 异步(多线程): 做上个任务花费很多时间，做上个任务的同时去完成下一个任务。等烧水的同时，拿10分钟切菜+炒菜
+
+
+        // console.log(1);
+        // setTimeout(function() {
+        //     console.log(3);
+        // }, 1000);
+        // console.log(2);
+
+
+        console.log(1);
+        setTimeout(function() {
+            console.log(3);
+        }, 0);
+        console.log(2);
+
+
+        // 执行机制:1、先执行 执行栈里面的同步任务，把回调函数放进去消息队列里面不执行，->
+        // ->等同步任务执行完毕。再把异步任务放进去执行栈
+        //同步任务和异步任务
+        // 同步任务:都在主线程上执行，形成执行栈
+        // 异步任务:js回调函数实现的(1、普通事件(click,resize) 2、资源加载(load,error等)3、定时器(setInterval,setTimeout等))
+        // 同步任务会放进主线程执行栈里面
+        // 异步任务放进任务队列(消息队列)
+    </script>
+</body>
+
+</html>

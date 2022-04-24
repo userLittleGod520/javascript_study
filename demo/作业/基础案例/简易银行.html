@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 简易ATM机
+        /*
+         ** 案例分析(用户本身余额为100): ATM机有4个功能
+                当:  1 显示余额  3 存钱
+                     2 取钱      4 退出ATM机
+          技术分析: 可以使用switch语句来完成
+
+          代码实现:
+        */
+        // 用户余额为100;  余额 balance 
+        var tool = prompt('小神ATM\n1:显示余额\n2取钱\n3存钱\n4退出ATM');
+        var balance = 100;
+        var moeny = balance;
+        // 功能实现 switch
+        tool = Number(tool);
+        switch (tool) {
+            case 1:
+                alert('你现有余额是' + balance);
+                break;
+            case 2:
+                var moeny = prompt('请问您需要取多少钱?');
+                var E_moeny = balance - moeny;
+                alert('你还有' + E_moeny + '元');
+                break;
+            case 3:
+                // 存钱
+                var moeny = prompt('请问你需要存多少钱?');
+                var E_moeny = +balance + +moeny;
+                alert('你还有' + E_moeny + '元');
+                break;
+            case 4:
+                // 退出ATM机
+                alert('退出ATM.........');
+                break;
+            default:
+                alert('请按照指令来操作');
+        }
+    </script>
+</body>
+
+</html>

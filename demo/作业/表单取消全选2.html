@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .wrap {
+            width: 960px;
+            margin: 100px auto;
+            /* border: 1px solid red; */
+        }
+        
+        table {
+            width: 400px;
+            height: 250px;
+            text-align: center;
+        }
+        
+        thead {
+            background-color: #87CEEB;
+        }
+        
+        th {
+            border-bottom: 10px solid #D3D3D3;
+        }
+        
+        tr {
+            border-bottom: 1px solid gray;
+            border-right: 1px solid gray;
+        }
+        
+        #j_td tr td {
+            border-bottom: 1px solid gray;
+            border-right: 1px solid gray;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <table>
+            <thead>
+                <tr>
+                    <th><input type="checkbox" id="j_cbAll"></th>
+                    <th>商品</th>
+                    <th>价钱</th>
+                </tr>
+            </thead>
+            <tbody id="j_td">
+                <tr>
+                    <td><input type="checkbox" /></td>
+                    <td>iPhone 12pro-max远峰蓝1TB</td>
+                    <td>8000</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" /></td>
+                    <td>iPhone 13pro-max远峰蓝1TB</td>
+                    <td>81000</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" /></td>
+                    <td>iPhone 14pro-max远峰蓝1TB</td>
+                    <td>18000</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <script>
+        var j_cbAll = document.querySelector('#j_cbAll');
+        var j_tds = document.querySelector('#j_td').getElementsByTagName('input');
+        j_cbAll.onclick = function() {
+            for (var i = 0; i < j_tds.length; i++) {
+                j_tds[i].checked = this.checked;
+            }
+        }
+        for (var i = 0; i < j_tds.length; i++) {
+            j_tds[i].onclick = function() {
+                var flag = true;
+                for (var i = 0; i < j_tds.length; i++) {
+                    if (!j_tds[i].checked) {
+                        flag = false;
+                    }
+                }
+                j_cbAll.checked = flag;
+            }
+        }
+    </script>
+</body>
+
+</html>

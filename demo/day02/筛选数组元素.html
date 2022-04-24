@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //  arr [2,0,6,1,25,11,25]筛选数组中大于10的数  存放新数组 newArr;
+        var arr = [2, 0, 6, 1, 25, 11, 25];
+        var newArr = [];
+        var j = 0;
+        var newArr2 = [];
+        for (var i = 0; i < arr.length; i++) {
+            if (arr[i] > 10) {
+                newArr[j] = arr[i];
+                j++;
+            } else {
+                newArr2[j] = arr[i];
+            }
+        }
+        var str = '';
+        for (var i = 0; i < newArr.length; i++) {
+            str += newArr[i];
+            str += ' ';
+        }
+        console.log('数组中大于10的数是:' + str);
+        var str2 = '';
+        for (var i = 0; i < arr.length; i++) {
+            if (arr[i] < 10) {
+                str2 += arr[i];
+                str2 += ',';
+            }
+        }
+        console.log('数组中小于10的数是:' + str2);
+    </script>
+</body>
+
+</html>

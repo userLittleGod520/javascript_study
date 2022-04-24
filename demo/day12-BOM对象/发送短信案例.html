@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="box">
+        <label for="">
+            <input type="tel">
+            <button>发送</button>
+        </label>
+    </div>
+    <script>
+        // 案例分析:
+        // 1、按钮点击之后，会禁用disable为true
+        // 2、等待60s 内容修改，button通过 innerHTML修改
+        // 3、里面的秒数有变化的，因此需要用到定时器
+        // 4、定义一个变量，在定时器里面不断递减
+        // 5、如果变量为 0 到时间了，停止定时器。复原按钮初始状态
+
+        var btn = document.querySelector('button');
+        var time = 3; //时间
+        btn.addEventListener('click', function() {
+            this.disabled = 'true';
+            // 设置定时器
+            var timer = setInterval(function() {
+                if (time == 0) {
+                    // 清除定时器
+                    clearInterval(timer);
+                    // 复原按钮
+                    btn.disabled = false;
+                    btn.innerHTML = '发送';
+                } else {
+                    btn.innerHTML = '还剩下' + time + '秒';
+                    time--;
+                }
+            }, 1000);
+        })
+    </script>
+</body>
+
+</html>

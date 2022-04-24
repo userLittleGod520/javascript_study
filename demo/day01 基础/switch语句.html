@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // switch 语句:
+        /*语法: switch  开关  case 选项
+        switch(表达式) {
+               case value1: 
+               执行语句
+               break;  //退出循环
+               case value2:
+               执行语句2;
+               break;
+               .......
+               default:
+                   执行最后语句
+        }*/
+        // 不进行数据类转换，无法读取 switch的结果 , 因为num的值跟case的值是用全等来匹配的
+        // 如果当前 case没有break 则不会退出switch 继续执行下一个case  
+        var num = prompt('请输入1-2');
+        // 数据类型转换
+        num = Number(num);
+
+        switch (num) {
+            case 1:
+                alert('我是1');
+                break;
+            case 2:
+                alert('我是2');
+                break;
+            default:
+                alert('没有匹配的值');
+        }
+    </script>
+</body>
+
+</html>

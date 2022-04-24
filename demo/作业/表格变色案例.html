@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .box {
+            width: 1200px;
+            margin: 100px auto;
+            /* border: 1px solid red; */
+        }
+        
+        table {
+            width: 800px;
+            margin: 0 auto;
+            /* border: 1px solid red; */
+        }
+        
+        .pink {
+            background-color: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <table border="1">
+            <thead>
+                <tr>
+                    <td>班级</td>
+                    <td>学号</td>
+                    <td>姓名</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>18计算机6班</td>
+                    <td>20180656</td>
+                    <td>李神</td>
+                </tr>
+                <tr>
+                    <td>18计算机6班</td>
+                    <td>20180656</td>
+                    <td>李神</td>
+                </tr>
+
+                <tr>
+                    <td>18计算机6班</td>
+                    <td>20180656</td>
+                    <td>李神</td>
+                </tr>
+
+                <tr>
+                    <td>18计算机6班</td>
+                    <td>20180656</td>
+                    <td>李神</td>
+                </tr>
+
+                <tr>
+                    <td>18计算机6班</td>
+                    <td>20180656</td>
+                    <td>李神</td>
+                </tr>
+
+                <tr>
+                    <td>18计算机6班</td>
+                    <td>20180656</td>
+                    <td>李神</td>
+                </tr>
+
+                <tr>
+                    <td>18计算机6班</td>
+                    <td>20180656</td>
+                    <td>李神</td>
+                </tr>
+            </tbody>
+
+
+        </table>
+    </div>
+    <script>
+        // 隔行变色
+        // 1、新的鼠标事件  鼠标经过 onmouseover 鼠标离开 onmouseout
+        // 2、鼠标经过tr 当前行变色  鼠标离开 去掉颜色
+        // 3、th不需要变色 tbody 变色
+
+        // 1、获取元素
+        var trs = document.querySelector('tbody').querySelectorAll('tr');
+        console.log(trs);
+        // 2、利用循环 绑定事件
+        for (var i = 0; i < trs.length; i++) {
+            trs[i].onmouseover = function() {
+                    //3、鼠标经过事件
+                    this.className = 'pink';
+                }
+                // 4、鼠标离开事件 onmouseout
+            trs[i].onmouseout = function() {
+                this.className = '';
+            }
+
+        }
+    </script>
+</body>
+
+</html>

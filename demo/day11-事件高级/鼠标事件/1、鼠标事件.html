@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>见不得人</div>
+    <p>1234</p>
+    <script>
+        // 鼠标事件
+        // 1、contextmenu 主要控制 何时显示上下文菜单，主要用于取消默认的上下文菜单
+        // 2、禁止鼠标选中(selectstart 开始选中)
+        var div = document.querySelector('div');
+        var p = document.querySelector('p');
+        div.addEventListener('contextmenu', function(e) {
+            e.preventDefault();
+        })
+        p.addEventListener('selectstart', function(e) {
+            e.preventDefault();
+        })
+    </script>
+</body>
+
+</html>

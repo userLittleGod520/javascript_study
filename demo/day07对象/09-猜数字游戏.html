@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 猜数字游戏
+        // 1、随机生成1-10的整数 我们需要用到Math.random()方法 
+        // 2、需要一直猜到正确为止， 所以需要一直循环。
+        // 3、while循环更简单
+        // 4、核心算法 if else if 判断大于、小于、等于。
+
+        // function getRandom(min, max) {
+        //     return Math.floor(Math.random() * (max - min + 1)) + min;
+        // }
+        // var random = getRandom(1, 10);
+        // while (true) { // 死循环
+        //     var num = prompt('填数字1-10');
+        //     num = Number(num);
+        //     if (num > random) {
+        //         alert('你猜大了!');
+        //     } else if (num < random) {
+        //         alert('你猜小了!')
+        //     } else {
+        //         break;
+        //     }
+        // }
+
+        // 要求用户猜 1-50的随机整数   机会只有 10次
+        function GetRandom(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+        var num = GetRandom(1, 50); // 判断条件  不满足则继续 循环 满足 退出循环
+        var result = prompt('请输入你的数字'); // 保存用户输入的值
+        // 进行 循环
+        for (var i = 1; i <= 10; i++) {
+            if (result > num) {
+                alert('数字大了，继续猜！');
+            } else if (result < num) {
+                alert('数字小了，继续猜！');
+            } else {
+                alert('您猜对了!');
+                break; // 退出循环
+            }
+            if (result == 10) {
+                alert('抱歉你的次数已经用完了!');
+            }
+        }
+    </script>
+</body>
+
+</html>

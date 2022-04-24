@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        img {
+            position: absolute;
+        }
+    </style>
+</head>
+
+<body>
+    <img src="../image/2.gif" alt="">
+    <script>
+        // 获取页面DOM节点
+        var img = document.querySelector('img');
+        // 注册事件
+        img.addEventListener('mousemove', function(e) {
+            // console.log(e);
+            var x = e.pageX;
+            var y = e.pageY;
+            this.style.left = x - 220 + 'px';
+            this.style.top = y - 300 + 'px';
+        })
+    </script>
+</body>
+
+</html>

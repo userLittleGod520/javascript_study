@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .wrap {
+            width: 960px;
+            margin: 100px auto;
+            /* border: 1px solid red; */
+        }
+        
+        table {
+            width: 400px;
+            height: 250px;
+            text-align: center;
+        }
+        
+        thead {
+            background-color: #87CEEB;
+        }
+        
+        th {
+            border-bottom: 10px solid #D3D3D3;
+        }
+        
+        tr {
+            border-bottom: 1px solid gray;
+            border-right: 1px solid gray;
+        }
+        
+        #j_td tr td {
+            border-bottom: 1px solid gray;
+            border-right: 1px solid gray;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <table>
+            <thead>
+                <tr>
+                    <th><input type="checkbox" id="j_cbAll"></th>
+                    <th>商品</th>
+                    <th>价钱</th>
+                </tr>
+            </thead>
+            <tbody id="j_td">
+                <tr>
+                    <td><input type="checkbox" /></td>
+                    <td>iPhone 12pro-max远峰蓝1TB</td>
+                    <td>8000</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" /></td>
+                    <td>iPhone 13pro-max远峰蓝1TB</td>
+                    <td>81000</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" /></td>
+                    <td>iPhone 14pro-max远峰蓝1TB</td>
+                    <td>18000</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <script>
+        // 全选商品案例
+        /*
+        //  1、全选和取消全选做法：让复选框的checkbox属性(选中) 跟随全选按钮即可
+        //  2、下面复选框需要全部选中 才能被全选 下面复选绑定事件 一点击 循环查看 复选框是否选中，有一个不选中，上面不能全选中
+        //  3、设置一个变量查看是否全部选中
+        */
+
+        // 1、获取页面节点
+        var j_cbAll = document.getElementById('j_cbAll'); // 全选按钮
+        var j_tds = document.getElementById('j_td').getElementsByTagName('input'); // 所有单选框
+        //  2、注册事件
+        j_cbAll.onclick = function() {
+            // this.checked 可以获取当前复选框是否 选中 true 未选中 false 
+            for (var i = 0; i < j_tds.length; i++) {
+                j_tds[i].checked = this.checked;
+                console.log(this.checked);
+            }
+        }
+        for (var j = 0; j < j_tds.length; j++) {
+            j_tds[j].onclick = function() {
+                //flag = true;
+                var flag = true;
+                // 每次点击下面复选框都要检查是否4个全部选中
+                for (var k = 0; k < j_tds.length; k++) {
+                    if (!j_tds[k].checked) {
+                        flag = false;
+                    }
+                }
+                j_cbAll.checked = flag;
+            }
+        }
+    </script>
+</body>
+
+</html>

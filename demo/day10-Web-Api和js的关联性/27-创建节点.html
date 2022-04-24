@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul>
+        <li>123</li>
+    </ul>
+    <script>
+        // 创建元素 createElement
+        // 添加节点 node.appendChild(child) 将一个节点添加到指定的父节点的子节点列表末尾。
+        // 类似css 伪元素   ::after
+        var li = document.createElement('li');
+        // 2、添加节点 node.appendChild(child) node 父级 child 子级 
+        // 后面追加元素 类似 数组 push
+        var ul = document.querySelector('ul');
+        ul.appendChild(li);
+
+        // 添加前面元素节点  node.insertBefore(child,指定元素); 将一个节点添加到父节点的指定节点前面。
+        // 类似css 伪元素 ::before
+        // 前面追加元素
+        var lili = document.createElement('li');
+        ul.insertBefore(lili, ul.children[0]); // 添加到123 前面
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>不同对象添加不同定时器</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        div {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            margin: 100px 0px;
+        }
+        
+        .son {
+            background-color: blue;
+            margin-top: 400px;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+        }
+    </style>
+</head>
+
+<body>
+    <div>1</div>
+    <script>
+        // 给不同对象  添加不同的定时器
+        var div = document.querySelector('div');
+        // 动画一直 运
+        // console.log(div[1].offsetLeft);
+        function move(obj, target) {
+            // 设置定时器
+            var timer = setInterval(function() {
+                // 判断 超过目标大小 清除定时器
+                if (obj.offsetLeft >= target) {
+                    clearInterval(timer);
+                }
+                obj.style.left = obj.offsetLeft + 10 + 'px';
+            }, 30)
+            console.log(obj.offsetLeft);
+        }
+        move(div, 200);
+    </script>
+
+</body>
+
+</html>

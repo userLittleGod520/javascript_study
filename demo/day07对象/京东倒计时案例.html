@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 核心算法: 用户输入的时间减去 现在的时间就是剩余时间  不能让 05分去减去 25分 结果等于 负数
+        // 用时间戳去做 输入的总毫秒 减去 现在时间总 毫秒数 得到 剩余时间的毫秒数
+        // 剩余时间的总毫秒转换为 天、时、分、秒 (时间戳转换为 时 分 秒)
+
+        // 转换公式 天 = parseInt(总秒数 /60 /60 /24) = 天  以此类推
+        // h = parseInt(时间戳 /60 /60 %24) 计算小时
+        // m = parseInt(时间戳 /60 %60)
+        // s = parseInt(时间戳 %60)
+
+        function conutDown(time) {
+            var now_time = +new Date(); //返回 当前时间的时间戳
+            var input_time = +new Date(time); //返回用户输入时间总的毫秒数
+            var times = (input_time - now_time) / 1000; // time 是剩余总时间秒数
+            var d = parseInt(times / 60 / 60 / 24); // 天
+            d = d < 10 ? '0' + d : d;
+            var h = parseInt(times / 60 / 60 % 24); // 小时
+            h = h < 10 ? '0' + h : h;
+            var m = parseInt(times / 60 % 60) // 分钟
+            m = m < 10 ? '0' + m : m;
+            var s = parseInt(times % 60);
+            s = s < 10 ? '0' + s : s;
+            return d + '天' + h + '时' + m + '分' + s + '秒'
+        }
+
+        console.log(conutDown('2022-2-8 16:00:00'));
+    </script>
+</body>
+
+</html>

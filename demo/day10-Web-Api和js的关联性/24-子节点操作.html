@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 节点的优点 -->
+    <div>我是div</div>
+    <span>我是span</span>
+    <ul>
+        <li>我是 li</li>
+        <li>我是 li</li>
+        <li>我是 li</li>
+        <li>我是 li</li>
+    </ul>
+    <div class="demo">
+        <div class="box">
+            <span class='avg'>关闭二维码</span>
+        </div>
+    </div>
+    <script>
+        // 子节点操作 childNodes(标准用法) 获取所有节点类型  children(非标准) 获取都是元素节点
+        var ul = document.querySelector('ul');
+        // var lis = ul.getElementsByTagName('li');
+        console.log(ul.childNodes); // 获得所有子节点 包含 元素节点和文本节点
+        console.log(ul.childNodes[0].nodeType); // /n 返回换行
+        console.log(ul.childNodes[1].nodeType); // li 返回第一个li
+
+        // 拿取ul里面的子节点 需要专门处理
+        for (var i = 0; i < ul.length; i++) {
+            if (ul.childNodes[i].nodeType === 1) {
+                // ul.childNodes[i] 是元素节点
+                console.log(ul.childNodes[i]);
+            }
+        }
+
+        // parenNode.children (非标准) 获取所有的元素子节点
+        console.log(ul.children); // 4个li
+    </script>
+</body>
+
+</html>

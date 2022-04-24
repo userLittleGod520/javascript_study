@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <img src="" alt="">
+    <div>上午好</div>
+    <script>
+        // 根据事件的差异，显示的图片也不一样
+        // 案例分析
+        /*
+         // (1)根据不同的时间，所以需要用到日期内置对象
+         // (2)利用多分支语句设置不同的图片
+         // (3)需要一个图片，并且根据时间修改图片的src属性
+         // (4)需要一个div元素，显示不同问候语，修改元素内容即可
+        */
+
+        // 获取页面元素
+        var div = document.querySelector('div');
+        var img = document.querySelector('img');
+        // 得到当前的小时数 
+        var date = new Date();
+        var h = date.getHours();
+        // 判断小时数改变图片和文字信息
+        if (h < 12) {
+            img.src = './image/1.gif';
+            div.innerHTML = '上午好，要好好写代码';
+        } else if (h < 18) {
+            img.src = './image/2.gif';
+            div.innerHTML = '下午好';
+        } else {
+            img.src = './image/3.jpg';
+            div.innerHTML = '晚上好，尊贵的R9000p用户';
+        }
+    </script>
+</body>
+
+</html>
